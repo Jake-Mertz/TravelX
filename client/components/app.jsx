@@ -12,6 +12,7 @@ export default class App extends React.Component {
         params: {}
       }
     };
+    this.setView = this.setView.bind(this);
   }
 
   componentDidMount() {
@@ -22,13 +23,24 @@ export default class App extends React.Component {
       .finally(() => this.setState({ isLoading: false }));
   }
 
+  setView(name, params) {
+    this.setState({
+      view: {
+        name: name,
+        params: params
+      }
+    });
+  }
+
   render() {
     // return this.state.isLoading
     //   ? <h1>Testing connections...</h1>
     //   : <h1>{this.state.message}</h1>;
     let appView = null;
     if (this.state.view.name === 'user-login') {
-      appView = <UserLogin/>;
+      appView = <UserLogin
+        setView={this.setView}
+      />;
     }
     return (
       <div>{appView}</div>
