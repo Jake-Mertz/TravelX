@@ -1,0 +1,59 @@
+
+/* landing page */
+
+.landing-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: gray;
+  /* display: flex; */
+}
+
+.login-button {
+  margin: 1% 0% 0% 85%;
+  background-color: rgb(142, 191, 224);
+}
+
+.landing-hero-container {
+  margin: 12% 0% 0% 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-text {
+  font-size: 16px;
+  margin-left: 4%;
+}
+
+.sign-up-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
+}
+
+.sign-up-button {
+  background-color: rgb(142, 191, 224);
+}
+
+/* Sign up add Photo page */
+
+.airplane-photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8%;
+}
+
+.airplane-photo {
+  background-color: white;
+  width: 7rem;
+  height: 10.5rem;
+  border-radius: 60px;
+  margin-bottom: 6%;
+}
+
+.next-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
