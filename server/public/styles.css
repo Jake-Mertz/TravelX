@@ -57,3 +57,23 @@
   justify-content: center;
   margin-top: 5%;
 }
+
+/* Sign up add Interests page */
+
+.get-started-text {
+  margin-left: 22%;
+}
+
+.interests-form {
+  margin-left: 20%;
+}
+
+.interests-submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.interests-submit-button {
+  background: purple;
+}
