@@ -1,7 +1,8 @@
 import React from 'react';
 import LandingPage from './landing-page';
-import SignUpPhoto from './sign-up-photo.jsx';
+import SignUpPhoto from './sign-up-photo';
 import SignUpInterests from './sign-up-interests';
+import HomePage from './home-page';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -47,6 +48,10 @@ export default class App extends React.Component {
       appView = <SignUpPhoto />;
     } else if (this.state.view.name === 'sign-up-interests') {
       appView = <SignUpInterests />;
+    } else if (this.state.view.name === 'home-page') {
+      appView = <HomePage
+        setView={this.setView}
+      />;
     }
     return (
       <div>{appView}</div>
