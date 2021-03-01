@@ -1,5 +1,6 @@
 import React from 'react';
-import UserLogin from './user-login';
+import LandingPage from './landing-page';
+import SignUpPhoto from './sign-up-photo.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export default class App extends React.Component {
       // message: null,
       // isLoading: true
       view: {
-        name: 'user-login',
+        name: 'sign-up-photo',
         params: {}
       }
     };
@@ -37,10 +38,12 @@ export default class App extends React.Component {
     //   ? <h1>Testing connections...</h1>
     //   : <h1>{this.state.message}</h1>;
     let appView = null;
-    if (this.state.view.name === 'user-login') {
-      appView = <UserLogin
+    if (this.state.view.name === 'landing-page') {
+      appView = <LandingPage
         setView={this.setView}
       />;
+    } else if (this.state.view.name === 'sign-up-photo') {
+      appView = <SignUpPhoto />;
     }
     return (
       <div>{appView}</div>
