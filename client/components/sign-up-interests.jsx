@@ -9,8 +9,8 @@ function SignUpInterests(props) {
       <div className="airplane-photo-container">
         <div className="airplane-photo"></div>
       </div>
-      <h1>Let&#39;s get started! What are your travelling interests?</h1>
-      <form>
+      <h1 className="get-started-text">Let&#39;s get started! What are your travelling interests?</h1>
+      <form className="interests-form">
         <input type="checkbox" id="shopping" name="shopping" value="shopping"></input>
         <label>Shopping</label>
         <input type="checkbox" id="nightlife" name="nightlife" value="nightlife"></input>
@@ -24,6 +24,9 @@ function SignUpInterests(props) {
         <input type="checkbox" id="sightseeing" name="sightseeing" value="sightseeing"></input>
         <label>Sightseeing</label>
       </form>
+      <div className="interests-submit-container">
+        <button className="interests-submit-button">Done!</button>
+      </div>
     </div>
   );
 }
