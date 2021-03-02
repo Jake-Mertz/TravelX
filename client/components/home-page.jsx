@@ -11,7 +11,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <button>Profile</button>
+        <button onClick={() => this.props.setView('profile', {})}>Profile</button>
       </div>
     );
   }

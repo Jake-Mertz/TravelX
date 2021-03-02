@@ -3,6 +3,8 @@ import LandingPage from './landing-page';
 import SignUpPhoto from './sign-up-photo';
 import SignUpInterests from './sign-up-interests';
 import HomePage from './home-page';
+import Login from './login-page';
+import SignUpCredentials from './sign-up-creds';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -11,7 +13,7 @@ export default class App extends React.Component {
       // message: null,
       // isLoading: true
       view: {
-        name: 'sign-up-interests',
+        name: 'landing-page',
         params: {}
       }
     };
@@ -50,6 +52,14 @@ export default class App extends React.Component {
       appView = <SignUpInterests />;
     } else if (this.state.view.name === 'home-page') {
       appView = <HomePage
+        setView={this.setView}
+      />;
+    } else if (this.state.view.name === 'login') {
+      appView = <Login
+        setView={this.setView}
+      />;
+    } else if (this.state.view.name === 'sign-up-creds') {
+      appView = <SignUpCredentials
         setView={this.setView}
       />;
     }
