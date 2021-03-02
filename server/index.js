@@ -19,6 +19,8 @@ app.get('/api/health-check', (req, res, next) => {
     .catch(err => next(err));
 });
 
+// new stuff goes here
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });

@@ -15,7 +15,8 @@ export default class App extends React.Component {
       view: {
         name: 'landing-page',
         params: {}
-      }
+      },
+      user: []
     };
     this.setView = this.setView.bind(this);
   }
@@ -35,6 +36,13 @@ export default class App extends React.Component {
         params: params
       }
     });
+  }
+
+  getUserProfile() {
+    fetch('api/userTable')
+      .then(res => res.json())
+      .then(data => this.setState({ user: data }))
+      .catch(err => console.error(err));
   }
 
   render() {
