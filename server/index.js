@@ -21,6 +21,9 @@ app.get('/api/health-check', (req, res, next) => {
 
 // new stuff goes here
 
+// Client uploads profile photo
+app.post('api/uploads');
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
