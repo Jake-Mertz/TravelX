@@ -38,5 +38,8 @@ module.exports = {
     },
     stats: 'minimal',
     watchContentBase: true
+  },
+  performance: {
+    hints: false
   }
 };
