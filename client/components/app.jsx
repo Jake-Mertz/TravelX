@@ -5,6 +5,7 @@ import SignUpInterests from './sign-up-interests';
 import HomePage from './home-page';
 import Login from './login-page';
 import SignUpCredentials from './sign-up-creds';
+import ProfilePage from './profile-page';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -68,6 +69,10 @@ export default class App extends React.Component {
       />;
     } else if (this.state.view.name === 'sign-up-creds') {
       appView = <SignUpCredentials
+        setView={this.setView}
+      />;
+    } else if (this.state.view.name === 'profile-page') {
+      appView = <ProfilePage
         setView={this.setView}
       />;
     }
