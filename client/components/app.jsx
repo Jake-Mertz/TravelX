@@ -14,7 +14,7 @@ export default class App extends React.Component {
       // message: null,
       // isLoading: true
       view: {
-        name: 'sign-up-creds',
+        name: 'login-page',
         params: {}
       },
       user: []
@@ -78,7 +78,7 @@ export default class App extends React.Component {
       appView = <HomePage
         setView={this.setView}
       />;
-    } else if (this.state.view.name === 'login') {
+    } else if (this.state.view.name === 'login-page') {
       appView = <Login
         setView={this.setView}
       />;

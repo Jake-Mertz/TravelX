@@ -1,3 +1,12 @@
+.back-button {
+  margin: 2% 0% 0% 2%;
+  border-style: none;
+}
+
+.back-button:hover {
+  border-style: none none solid none;
+}
+
 
 /* landing page */
 
@@ -35,6 +44,37 @@
   background-color: rgb(142, 191, 224);
 }
 
+/* Login page */
+
+.login-page-center {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-back {
+  font-size: 15px;
+  font-style: normal;
+  margin-bottom: 8%;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.login-form-input {
+  margin-bottom: 5%;
+}
+
+.login-form-submit {
+  width: 85px;
+  margin-top: 15%;
+  margin-left: 57.5px;
+}
+
 /* Sign up credentials page */
 
 ::placeholder {
@@ -42,7 +82,7 @@
 }
 
 .sign-up-creds-container {
-  padding: 1.5% 2%;
+  padding: 0%;
 }
 
 .sign-up-creds-center {

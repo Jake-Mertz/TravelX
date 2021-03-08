@@ -4,7 +4,7 @@ function LandingPage(props) {
   return (
     <div className="landing-page">
       <div>
-        <button className="login-button" onClick={() => props.setView('login', {})}>Login</button>
+        <button className="login-button" onClick={() => props.setView('login-page', {})}>Login</button>
       </div>
       <div className="landing-hero-container">
         <img src="../../server/public/images/banff-mountains.png" alt="banff mountains" />
