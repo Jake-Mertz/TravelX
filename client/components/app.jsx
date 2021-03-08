@@ -20,6 +20,17 @@ export default class App extends React.Component {
       user: []
     };
     this.setView = this.setView.bind(this);
+    this.handlePhotoSubmit = this.handlePhotoSubmit.bind(this);
+  }
+
+  handlePhotoSubmit(event) {
+    const formData = new FormData(event.target);
+    fetch('api/uploads', {
+      method: 'POST',
+      body: formData
+    })
+      .then(res => res.json())
+      .then(() => event.target.reset());
   }
 
   componentDidMount() {

@@ -24,18 +24,13 @@ app.get('/api/health-check', (req, res, next) => {
 
 // Client uploads profile photo
 app.post('api/uploads', uploadsMiddleware, (req, res, next) => {
-  const { name } = req.body;
-  if (!name) {
-    throw new ClientError(400, 'name is a required field');
-  }
-
   const image = `/userTable/${req.file.filename}`;
   const imageSQL = `
-    insert into "userTable" ("profilePhotoUrl", "name")
-    values ($1, $2)
-    returning "profilePhotoUrl", "name"
+    insert into "userTable" ("profilePhotoUrl")
+    values ($1)
+    returning "profilePhotoUrl"
   `;
-  const imageParams = [image, name];
+  const imageParams = [image];
   db.query(imageSQL, imageParams)
     .then(result => {
       const storedImage = result.rows;
