@@ -1,6 +1,9 @@
 import React from 'react';
 
 function SignUpPhoto(props) {
+  function signUpPhotoSubmit() {
+    props.setView('sign-up-interests', {});
+  }
   return (
     <div className="landing-page">
       <div>
@@ -11,7 +14,7 @@ function SignUpPhoto(props) {
         <button>Upload Photo</button>
       </div>
       <div className="next-button-container">
-        <button>Next</button>
+        <button onClick={() => signUpPhotoSubmit()}>Next</button>
       </div>
     </div>
   );

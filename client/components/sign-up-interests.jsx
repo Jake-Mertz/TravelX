@@ -1,6 +1,9 @@
 import React from 'react';
 
 function SignUpInterests(props) {
+  function signUpComplete() {
+    props.setView('home-page', {});
+  }
   return (
     <div className="landing-page">
       <div>
@@ -25,7 +28,7 @@ function SignUpInterests(props) {
         <label>Sightseeing</label>
       </form>
       <div className="interests-submit-container">
-        <button className="interests-submit-button">Done!</button>
+        <button className="interests-submit-button" onClick={() => signUpComplete()}>Done!</button>
       </div>
     </div>
   );
