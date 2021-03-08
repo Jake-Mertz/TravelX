@@ -22,6 +22,41 @@ app.get('/api/health-check', (req, res, next) => {
 
 // new stuff goes here
 
+// Client creates profile with username, email, and password
+app.post('api/createUser', (req, res, next) => {
+  const userSQL = `
+    insert into "userTable" ("userId", "createdAt", "name", "email", "password")
+    values (default, default, $1, $2, $3)
+    returning "userId"
+  `;
+  const userParams = [req.params.userId, req.params.createdAt, req.body.name, req.body.email, req.body.password];
+  db.query(userSQL, userParams)
+    .then(result => {
+      const newUser = result.rows;
+      res.status(200).json(newUser);
+    })
+    .catch(err => next(err));
+});
+
+// app.get('api/createUser', (req, res, next) => {
+//   const sql = `
+//     select *
+//     from "userTable"
+//     where "userId" = $1
+//   `;
+//   const params = [req.params.userId];
+//   db.query(sql, params)
+//     .then(result => {
+//       res.json(result.rows);
+//     })
+//     .catch(err => next(err));
+// });
+
+app.get('api/createUser', (req, res, next) => {
+  res.render('form');
+  res.sendFile('index.html');
+});
+
 // Client uploads profile photo
 app.post('api/uploads', uploadsMiddleware, (req, res, next) => {
   const image = `/userTable/${req.file.filename}`;
