@@ -67,9 +67,13 @@ export default class App extends React.Component {
         setView={this.setView}
       />;
     } else if (this.state.view.name === 'sign-up-photo') {
-      appView = <SignUpPhoto />;
+      appView = <SignUpPhoto
+        setView={this.setView}
+      />;
     } else if (this.state.view.name === 'sign-up-interests') {
-      appView = <SignUpInterests />;
+      appView = <SignUpInterests
+        setView={this.setView}
+      />;
     } else if (this.state.view.name === 'home-page') {
       appView = <HomePage
         setView={this.setView}

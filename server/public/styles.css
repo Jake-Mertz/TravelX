@@ -35,6 +35,47 @@
   background-color: rgb(142, 191, 224);
 }
 
+/* Sign up credentials page */
+
+::placeholder {
+  text-align: center;
+}
+
+.sign-up-creds-container {
+  padding: 1.5% 2%;
+}
+
+.sign-up-creds-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-up-creds-logo {
+  margin: 5% 0% 8% 0%;
+}
+
+.sign-up-form-container {
+  width: 200px;
+}
+
+.sign-up-creds-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sign-up-form-input {
+  margin-bottom: 5%;
+  border-style: none none solid none;
+}
+
+.sign-up-form-submit {
+  width: 85px;
+  margin-top: 15%;
+  margin-left: 57.5px;
+}
+
 /* Sign up add Photo page */
 
 .airplane-photo-container {
