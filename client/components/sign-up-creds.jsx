@@ -6,7 +6,7 @@ function SignUpCredentials(props) {
   }
   return (
     <div className="sign-up-creds-container">
-      <button onClick={() => props.setView('landing-page', {})}>Back</button>
+      <button onClick={() => props.setView('landing-page', {})} className="back-button">Back</button>
       <div className="sign-up-creds-center">
         <h1 className="sign-up-creds-logo">TravelX</h1>
         <div className="sign-up-form-container">
