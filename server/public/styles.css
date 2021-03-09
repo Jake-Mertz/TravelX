@@ -7,6 +7,10 @@
   border-style: none none solid none;
 }
 
+.welcome-solo-traveler {
+  font-size: 16px;
+}
+
 
 /* landing page */
 
@@ -130,25 +134,55 @@
 
 /* Sign up add Photo page */
 
+.sign-up-photo-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.sign-up-photo-blurb {
+  margin-top: 2%;
+  font-size: 12px;
+}
+
 .airplane-photo-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 8%;
+  margin-top: 4%;
 }
 
 .airplane-photo {
-  background-color: white;
+  background-color: rgb(177, 177, 177);
   width: 7rem;
   height: 10.5rem;
   border-radius: 60px;
   margin-bottom: 6%;
+  border-style: none;
+}
+
+/* button.airplane-photo {
+  pointer-events: none;
+} */
+
+.airplane-photo:hover {
+  background-color: purple;
 }
 
 .next-button-container {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 1.5%;
+}
+
+.sign-up-photo-submit {
+  border-style: none;
+  width: 120px;
+  height: 35px;
+  border-radius: 90px;
+  color: white;
+  background-color: black;
 }
 
 /* Sign up add Interests page */
