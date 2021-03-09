@@ -17,7 +17,7 @@ function SignUpCredentials(props) {
             <input type="email" id="email" name="email" placeholder="What is your email?" className="sign-up-form-input"></input>
             {/* <label htmlFor="username">Password</label> */}
             <input type="text" id="password" name="password" placeholder="Create a password" className="sign-up-form-input"></input>
-            <input type="submit" value="Submit" className="sign-up-form-submit" onClick={() => signUpCredSubmit()}></input>
+            <input type="submit" value="Submit" className="sign-up-cred-submit" onClick={() => signUpCredSubmit()}></input>
           </form>
         </div>
       </div>
