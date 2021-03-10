@@ -85,6 +85,7 @@
 
 .login-form-input {
   margin-bottom: 5%;
+  border-style: none none solid none;
 }
 
 .login-form-submit {
