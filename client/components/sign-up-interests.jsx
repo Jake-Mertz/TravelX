@@ -7,7 +7,7 @@ function SignUpInterests(props) {
   return (
     <div className="intro-page-container">
       <div className="intro-content-container">
-        <h1>TravelX</h1>
+        <h1 className="intro-logo">TravelX</h1>
         <h3 className="welcome-text">Welcome solo traveler</h3>
         <h4 className="intro-blurb">Did you know finding common interests not only makes
           <br></br>
@@ -28,6 +28,7 @@ function SignUpInterests(props) {
           <label>Food</label>
           <input type="checkbox" id="sightseeing" name="sightseeing" value="sightseeing"></input>
           <label>Sightseeing</label>
+          {/* <input type="submit" value="Submit" className="join-sign-up-buttons" onClick={() => signUpComplete()}>Done!</input> */}
         </form>
         <button className="join-sign-up-buttons" onClick={() => signUpComplete()}>Done!</button>
       </div>

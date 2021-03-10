@@ -7,7 +7,7 @@ function SignUpPhoto(props) {
   return (
     <div className="intro-page-container">
       <div className="intro-content-container">
-        <h1>TravelX</h1>
+        <h1 className="intro-logo">TravelX</h1>
         <h3 className="welcome-text">Welcome solo traveler</h3>
         <h4 className="intro-blurb">Let&apos;s get started on building your profile! Please add at least
           <br></br>

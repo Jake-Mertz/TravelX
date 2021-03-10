@@ -3,9 +3,9 @@ import React from 'react';
 function LandingPage(props) {
   return (
     <div className="intro-page-container">
-      <button className="login-button" onClick={() => props.setView('login-page', {})}>Sign in</button>
+      <button className="sign-in-button" onClick={() => props.setView('login-page', {})}>Sign in</button>
       <div className="intro-content-container">
-        <h1>TravelX</h1>
+        <h1 className="intro-logo">TravelX</h1>
         <h3 className="welcome-text">Welcome solo traveler</h3>
         {/* <img src="../../server/public/images/banff-mountains.png" alt="banff mountains" /> */}
         <h3 className="intro-blurb">Ever had that wanderlust but didn&apos;t take that chance because a friend or
