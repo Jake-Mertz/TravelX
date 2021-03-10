@@ -2,12 +2,13 @@ import React from 'react';
 
 function LandingPage(props) {
   return (
-    <div className="landing-page">
+    <div className="intro-page-container">
       <button className="login-button" onClick={() => props.setView('login-page', {})}>Sign in</button>
-      <div className="landing-hero-container">
-        <h1 className="landing-page-logo">TravelX</h1>
+      <div className="intro-content-container">
+        <h1>TravelX</h1>
+        <h3 className="welcome-text">Welcome solo traveler</h3>
         {/* <img src="../../server/public/images/banff-mountains.png" alt="banff mountains" /> */}
-        <h3 className="landing-text">Ever had that wanderlust but didn&apos;t take that chance because a friend or
+        <h3 className="intro-blurb">Ever had that wanderlust but didn&apos;t take that chance because a friend or
           <br></br>
           loved one didn&apos;t have the time or wasn&apos;t interested?
           <br></br>
@@ -18,13 +19,10 @@ function LandingPage(props) {
           <br></br>
           destinations & interests.
         </h3>
-      </div>
-      <div className="sign-up-button-container">
-        <button className="join-button" onClick={() => props.setView('sign-up-creds', {})}>Join TravelX</button>
+        <button className="join-sign-up-buttons" onClick={() => props.setView('sign-up-creds', {})}>Join TravelX</button>
       </div>
     </div>
   );
-
 }
 
 export default LandingPage;

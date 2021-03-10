@@ -1,3 +1,10 @@
+/* Login / Sign-up pages: common elements */
+
+.intro-page-container {
+  width: 100vw;
+  height: 100vh;
+}
+
 .back-button {
   margin: 2% 0% 0% 2%;
   border-radius: 90px;
@@ -5,22 +12,41 @@
   width: 100px;
 }
 
-/* .back-button:hover {
-  border-style: none none solid none;
-} */
+.intro-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8%;
+}
 
-.welcome-solo-traveler {
+.welcome-text {
   font-size: 16px;
 }
 
+.join-sign-up-buttons {
+  border-style: none;
+  width: 120px;
+  height: 35px;
+  border-radius: 90px;
+  color: white;
+  background-color: black;
+}
+
+.sign-up-logo {
+
+}
+
+::placeholder {
+  text-align: center;
+}
+
+.intro-blurb {
+ font-size: 13px;
+
+}
 
 /* landing page */
-
-.landing-page {
-  width: 100vw;
-  height: 100vh;
-  /* display: flex; */
-}
 
 .login-button {
   margin: 1% 0% 0% 90%;
@@ -30,57 +56,12 @@
   width: 100px;
 }
 
-.landing-hero-container {
-  margin: 9% 0% 0% 0%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.landing-page-logo {
-  margin-bottom: 4%;
-}
-
-.landing-text {
-  font-size: 13px;
-  margin-left: 4%;
-}
-
-.sign-up-button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 6%;
-}
-
-.join-button {
-  border-style: none;
-  width: 120px;
-  height: 35px;
-  border-radius: 90px;
-  color: white;
-  background-color: black;
-}
-
 /* Login page */
 
-.login-page-center {
-  margin-top: 5%;
+.login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.welcome-back {
-  font-size: 15px;
-  font-style: normal;
-  margin-bottom: 8%;
-}
-
-.login-form-container {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
 }
 
 .login-form-input {
@@ -88,45 +69,13 @@
   border-style: none none solid none;
 }
 
-.login-form-submit {
-  border-style: none;
-  width: 120px;
-  height: 35px;
-  border-radius: 90px;
-  color: white;
-  background-color: black;
-  margin-top: 15%;
-  margin-left: 41.5px;
-}
-
 /* Sign up credentials page */
-
-::placeholder {
-  text-align: center;
-}
-
-.sign-up-creds-container {
-  padding: 0%;
-}
-
-.sign-up-creds-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sign-up-creds-logo {
-  margin: 5% 0% 8% 0%;
-}
-
-.sign-up-form-container {
-  width: 200px;
-}
 
 .sign-up-creds-form {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .sign-up-form-input {
@@ -134,86 +83,22 @@
   border-style: none none solid none;
 }
 
-.sign-up-cred-submit {
-  border-style: none;
-  width: 120px;
-  height: 35px;
-  border-radius: 90px;
-  color: white;
-  background-color: black;
-  margin-top: 15%;
-  margin-left: 38.5px;
-}
-
 /* Sign up add Photo page */
-
-.sign-up-photo-text-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5%;
-}
-
-.sign-up-photo-blurb {
-  margin-top: 2%;
-  font-size: 12px;
-}
-
-.airplane-photo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4%;
-}
 
 .airplane-photo {
   background-color: rgb(177, 177, 177);
   width: 7rem;
   height: 10.5rem;
   border-radius: 60px;
-  margin-bottom: 6%;
   border-style: none;
 }
-
-/* button.airplane-photo {
-  pointer-events: none;
-} */
 
 .airplane-photo:hover {
   background-color: purple;
 }
 
-.next-button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5%;
-}
-
-.sign-up-photo-submit {
-  border-style: none;
-  width: 120px;
-  height: 35px;
-  border-radius: 90px;
-  color: white;
-  background-color: black;
-}
-
 /* Sign up add Interests page */
 
-.get-started-text {
-  margin-left: 22%;
-}
-
 .interests-form {
-  margin-left: 20%;
-}
-
-.interests-submit-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 5%;
-}
-
-.interests-submit-button {
-  background: purple;
+  color: blue;
 }

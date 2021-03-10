@@ -2,23 +2,19 @@ import React from 'react';
 
 function Login(props) {
   return (
-    <div>
+    <div className="intro-page-container">
       <button onClick={() => props.setView('landing-page', {})} className="back-button">Back</button>
-      <div className="login-page-center">
+      <div className="intro-content-container">
         <h1>TravelX</h1>
-        <h2 className="welcome-back">Welcome Back!</h2>
-        <div>
-          <form className="login-form-container">
-            {/* <label htmlFor="username">Username</label> */}
+        <h2 className="welcome-text">Welcome Back!</h2>
+        <div className="login-form-container">
+          <form className="login-form">
             <input type="text" id="username" name="username" placeholder="Username" className="login-form-input"></input>
-            {/* <label htmlFor="username">Password</label> */}
             <input type="text" id="password" name="password" placeholder="Password" className="login-form-input"></input>
-            <input type="submit" value="Submit" onClick={() => props.setView('home-page', {})} className="login-form-submit"></input>
+            <input type="submit" value="Submit" onClick={() => props.setView('home-page', {})} className="join-sign-up-buttons"></input>
           </form>
         </div>
-
       </div>
-
     </div>
   );
 }
