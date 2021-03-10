@@ -5,31 +5,33 @@ function SignUpInterests(props) {
     props.setView('home-page', {});
   }
   return (
-    <div className="landing-page">
-      <div>
-        <button className="login-button">Login</button>
+    <div className="intro-page-container">
+      <div className="intro-content-container">
+        <h1>TravelX</h1>
+        <h3 className="welcome-text">Welcome solo traveler</h3>
+        <h4 className="intro-blurb">Did you know finding common interests not only makes
+          <br></br>
+        conversation easier, but also boosts your chances of building
+          <br></br>
+        genuine connections?
+        </h4>
+        <form className="interests-form">
+          <input type="checkbox" id="shopping" name="shopping" value="shopping"></input>
+          <label>Shopping</label>
+          <input type="checkbox" id="nightlife" name="nightlife" value="nightlife"></input>
+          <label>Nightlife</label>
+          <input type="checkbox" id="hiking" name="hiking" value="hiking"></input>
+          <label>Hiking</label>
+          <input type="checkbox" id="arts n culture" name="arts n culture" value="arts n culture"></input>
+          <label>Arts & Culture</label>
+          <input type="checkbox" id="food" name="food" value="food"></input>
+          <label>Food</label>
+          <input type="checkbox" id="sightseeing" name="sightseeing" value="sightseeing"></input>
+          <label>Sightseeing</label>
+        </form>
+        <button className="join-sign-up-buttons" onClick={() => signUpComplete()}>Done!</button>
       </div>
-      <div className="airplane-photo-container">
-        <div className="airplane-photo"></div>
-      </div>
-      <h1 className="get-started-text">Let&#39;s get started! What are your travelling interests?</h1>
-      <form className="interests-form">
-        <input type="checkbox" id="shopping" name="shopping" value="shopping"></input>
-        <label>Shopping</label>
-        <input type="checkbox" id="nightlife" name="nightlife" value="nightlife"></input>
-        <label>Nightlife</label>
-        <input type="checkbox" id="hiking" name="hiking" value="hiking"></input>
-        <label>Hiking</label>
-        <input type="checkbox" id="arts n culture" name="arts n culture" value="arts n culture"></input>
-        <label>Arts & Culture</label>
-        <input type="checkbox" id="food" name="food" value="food"></input>
-        <label>Food</label>
-        <input type="checkbox" id="sightseeing" name="sightseeing" value="sightseeing"></input>
-        <label>Sightseeing</label>
-      </form>
-      <div className="interests-submit-container">
-        <button className="interests-submit-button" onClick={() => signUpComplete()}>Done!</button>
-      </div>
+
     </div>
   );
 }
