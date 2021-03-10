@@ -72,13 +72,13 @@
 
 /* Login page */
 
-.login-form {
+.sign-in-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.login-form-input {
+.sign-in-form-input {
   margin-bottom: 5%;
   border-style: none none solid none;
 }
@@ -105,7 +105,7 @@
   height: 10.5rem;
   border-radius: 60px;
   border-style: none;
-  margin-top: 2%;
+  margin-top: 2.5%;
 }
 
 .airplane-photo:hover {
@@ -114,6 +114,32 @@
 
 /* Sign up add Interests page */
 
+.interests-blurb {
+  font-size: 25px;
+  margin-top: 1%;
+}
+
+.interests-form-container-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.interests-form-container {
+  margin-top: 2%;
+  width: 30%;
+  text-align: center;
+}
+
 .interests-form {
-  color: blue;
+  width: 100%;
+}
+
+.interests-input {
+  margin-right: 8%;
+}
+
+.interests-form-label {
+  width: 32%;
+  text-align: left;
 }

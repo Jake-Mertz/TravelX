@@ -7,7 +7,6 @@ function LandingPage(props) {
       <div className="intro-content-container">
         <h1 className="intro-logo">TravelX</h1>
         <h3 className="welcome-text">Welcome solo traveler</h3>
-        {/* <img src="../../server/public/images/banff-mountains.png" alt="banff mountains" /> */}
         <h3 className="intro-blurb">Ever had that wanderlust but didn&apos;t take that chance because a friend or
           <br></br>
           loved one didn&apos;t have the time or wasn&apos;t interested?
