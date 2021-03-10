@@ -6,10 +6,11 @@
 }
 
 .back-button {
-  margin: 2% 0% 0% 2%;
+  margin: 1% 0% 0% 2%;
   border-radius: 90px;
   background: none;
-  width: 100px;
+  width: 120px;
+  height: 35px;
 }
 
 .intro-content-container {
@@ -17,11 +18,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 8%;
+  margin-top: 7%;
 }
 
 .welcome-text {
   font-size: 16px;
+  margin-bottom: 2%;
 }
 
 .join-sign-up-buttons {
@@ -31,10 +33,21 @@
   border-radius: 90px;
   color: white;
   background-color: black;
+  margin-top: 5%;
 }
 
-.sign-up-logo {
+.intro-form-submit {
+  border-style: none;
+  width: 120px;
+  height: 35px;
+  border-radius: 90px;
+  color: white;
+  background-color: black;
+  margin-top: 10%;
+}
 
+.intro-logo {
+  font-size: 55px;
 }
 
 ::placeholder {
@@ -48,12 +61,13 @@
 
 /* landing page */
 
-.login-button {
-  margin: 1% 0% 0% 90%;
+.sign-in-button {
   border-style: solid;
+  width: 120px;
+  height: 35px;
   border-radius: 90px;
   background: none;
-  width: 100px;
+  margin: 1% 0% 0% 85%;
 }
 
 /* Login page */
@@ -91,6 +105,7 @@
   height: 10.5rem;
   border-radius: 60px;
   border-style: none;
+  margin-top: 2%;
 }
 
 .airplane-photo:hover {
