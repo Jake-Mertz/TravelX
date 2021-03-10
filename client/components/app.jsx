@@ -14,7 +14,7 @@ export default class App extends React.Component {
       // message: null,
       // isLoading: true
       view: {
-        name: 'sign-up-interests',
+        name: 'landing-page',
         params: {}
       },
       user: []
