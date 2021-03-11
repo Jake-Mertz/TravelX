@@ -29,8 +29,8 @@ export default class App extends React.Component {
       method: 'POST',
       body: formData
     })
-      .then(res => res.json())
-      .then(() => event.target.reset());
+      .then(res => res.json());
+    // .then(() => event.target.reset());
   }
 
   componentDidMount() {
