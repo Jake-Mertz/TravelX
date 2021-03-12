@@ -32,6 +32,7 @@ app.post('/api/createUser', (req, res, next) => {
   const userInfoParams = [req.body.name, req.body.email, req.body.password];
   db.query(userInfoSQL, userInfoParams)
     .then(result => {
+      req.session.userId = result.userId;
       res.status(201).json(result.rows[0]);
     })
     .catch(err => next(err));
