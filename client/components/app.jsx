@@ -24,16 +24,21 @@ export default class App extends React.Component {
     this.handleUserSubmit = this.handleUserSubmit.bind(this);
   }
 
-  handleUserSubmit(user) {
-    const newUserData = this.state.user.slice();
+  handleUserSubmit(name, email, password) {
+    const userInfo = {
+      name: name,
+      email: email,
+      password: password
+    };
+    // const newUserData = this.state.user.slice();
     fetch('/api/createUser', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ user })
+      body: JSON.stringify(userInfo)
     })
       .then(res => res.json())
-      .then(data => newUserData.push(data))
-      .then(() => this.setState({ user: newUserData }))
+      // .then(data => newUserData.push(data))
+      // .then(() => this.setState({ user: newUserData }))
       .catch(err => console.error(err));
   }
 
