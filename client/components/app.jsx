@@ -21,6 +21,20 @@ export default class App extends React.Component {
     };
     this.setView = this.setView.bind(this);
     this.handlePhotoSubmit = this.handlePhotoSubmit.bind(this);
+    this.handleUserSubmit = this.handleUserSubmit.bind(this);
+  }
+
+  handleUserSubmit(user) {
+    const newUserData = this.state.user.slice();
+    fetch('/api/createUser', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user })
+    })
+      .then(res => res.json())
+      .then(data => newUserData.push(data))
+      .then(() => this.setState({ user: newUserData }))
+      .catch(err => console.error(err));
   }
 
   handlePhotoSubmit(event) {
@@ -85,6 +99,7 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'sign-up-creds') {
       appView = <SignUpCredentials
         setView={this.setView}
+        handleUserSubmit={this.handleUserSubmit}
       />;
     } else if (this.state.view.name === 'profile-page') {
       appView = <ProfilePage
