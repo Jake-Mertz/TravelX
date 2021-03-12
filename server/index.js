@@ -25,17 +25,43 @@ app.get('/api/health-check', (req, res, next) => {
 // Client creates profile with username, email, and password
 app.post('/api/createUser', (req, res, next) => {
   // res.status(200).send(req.params);
-  const userSQL = `
-    insert into "userTable" ("userId", "createdAt", "name", "email", "password")
-    values (default, default, $1, $2, $3)
-    returning "userId"
-  `;
-  const userParams = [req.body.name, req.body.email, req.body.password];
-  db.query(userSQL, userParams)
+  // const userSQL = `
+  //   insert into "userTable" ("userId", "createdAt", "name", "email", "password")
+  //   values (default, default, $1, $2, $3)
+  //   returning "userId"
+  // `;
+  // const userSQL = `
+  //   insert into "userTable" ("userId", "createdAt")
+  //   values (default, default)
+  //   returning "userId"
+  // `;
+  // db.query(userSQL)
+  //   .then(result => {
+  //     const user = result.rows[0];
+  //     return {
+  //       userId: user.userId
+  //     };
+  //   })
+  //   .then(result => {
+  //     req.session.userId = result.userId;
+  const userInfoSQL = `
+        insert into "userTable2" ("name", "email", "password")
+        values ($1, $2, $3)
+        returning "userId", "createdAt", "name", "email", "password"
+      `;
+  const userInfoParams = [req.body.name, req.body.email, req.body.password];
+  db.query(userInfoSQL, userInfoParams)
     .then(result => {
-      const newUser = result.rows;
-      res.status(200).json(newUser);
+      res.status(201).json(result.rows[0]);
     })
+    // .catch(err => next(err));
+
+  // const userParams = [req.body.name, req.body.email, req.body.password];
+  // db.query(userSQL, userParams)
+  //   .then(result => {
+  //     const newUser = result.rows;
+  //     res.status(200).json(newUser);
+  //   })
     // .catch(err => next(err));
     .catch(res.send('whoops!'));
   // res.status(200).send({ message: 'hello!' });
