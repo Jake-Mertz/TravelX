@@ -38,6 +38,31 @@ app.post('/api/createUser', (req, res, next) => {
     .catch(err => next(err));
 });
 
+// Map users to home page
+app.get('/api/mapHome', (req, res, next) => {
+  const userListSQL = `
+    select
+    "ui"."userId",
+    "ui"."shopping",
+    "ui"."nightlife",
+    "ui"."artsnculture",
+    "ui"."food",
+    "ui"."sightseeing",
+    "ui"."leisure",
+    "ut"."name",
+    "ut"."userId"
+    from "userInfo" as "ui"
+    join "userTable2" as "ut" using ("userId")
+  `;
+  // const userId =
+  db.query(userListSQL)
+    .then(result => {
+      const users = result.rows;
+      res.status(200).json(users);
+    })
+    .catch(err => next(err));
+});
+
 // app.get('api/createUser', (req, res, next) => {
 //   const sql = `
 //     select *
@@ -56,6 +81,11 @@ app.post('/api/createUser', (req, res, next) => {
 //   res.render('form');
 //   res.sendFile('index.html');
 // });
+
+// Client fills out interests form
+// app.post('/api/intro-interests', (req, res, next) => {
+
+// })
 
 // Client uploads profile photo
 app.post('api/uploads', uploadsMiddleware, (req, res, next) => {
