@@ -184,3 +184,8 @@
 /* .home-hardcoded-user-example {
   width: 50%;
 } */
+
+.user-list {
+  width: 100vw;
+  height: 100vh;
+}
