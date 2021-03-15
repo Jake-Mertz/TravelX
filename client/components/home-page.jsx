@@ -10,6 +10,10 @@ class HomePage extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.getUsers();
+  }
+
   getUsers() {
     fetch('/api/mapHome', { method: 'GET' })
       .then(res => res.json())
