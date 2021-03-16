@@ -1,20 +1,7 @@
 import React from 'react';
 
 function UserCard(props) {
-  // const userjawn = function interests() {
-  //   const interests = [props.artsnculture, props.food, props.leisure, props.nightlife, props.shipping, props.sightseeing];
-  //   const userInterests = '';
-  //   for (let i = 0; i < 5; i++) {
-  //     const interest = interests[i].toString();
-  //     if (interests[i] > 0) {
-  //       userInterests.concat(interest);
-  //     }
-  //   }
-  //   return userInterests;
-  // };
-  function oneInterest() {
-    // const interests = 'hello!';
-    // return interests;
+  function userInterestMap() {
     let userInterests = [];
     const interestsData = [
       props.artsandculture,
@@ -40,7 +27,7 @@ function UserCard(props) {
       </div>
       <div className="user-info-container">
         <h1 className="user-card-name">{props.name}</h1>
-        <p>Interests: {oneInterest()}</p>
+        <p>Interests: {userInterestMap()}</p>
       </div>
       <div className="user-card-buttons-container">
         <button className="user-card-no"><i className="fas fa-times"></i></button>
