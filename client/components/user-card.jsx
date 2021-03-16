@@ -43,8 +43,8 @@ function UserCard(props) {
         <p>Interests: {oneInterest()}</p>
       </div>
       <div className="user-card-buttons-container">
-        <button className="user-card-no"></button>
-        <button className="user-card-yes"></button>
+        <button className="user-card-no"><i className="fas fa-times"></i></button>
+        <button className="user-card-yes"><i className="fas fa-check"></i></button>
       </div>
     </div>
   );

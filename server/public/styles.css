@@ -272,3 +272,18 @@
 .user-card-yes:hover {
   background-color: rgb(27, 207, 27);
 }
+
+.fa-check {
+  color: rgb(206, 206, 206);
+}
+.fa-times {
+  color: rgb(206, 206, 206);
+}
+.user-card-yes:hover > .fa-check { color: white}
+.user-card-no:hover > .fa-times { color: white}
+/* .fa-check:hover {
+  color: rgb(255, 255, 255);
+}
+.fa-times:hover {
+  color: rgb(255, 255, 255);
+} */
