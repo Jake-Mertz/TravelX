@@ -26,12 +26,13 @@ class HomePage extends React.Component {
         <div key={user.userId}>
           <UserCard
             name={user.name}
-            artsnculture={user.artsnculture}
+            artsandculture={user.artsandculture}
             food={user.food}
             leisure={user.leisure}
             nightlife={user.nightlife}
             shopping={user.shopping}
             sightseeing={user.sightseeing}
+            hiking={user.hiking}
           />
         </div>
       );
