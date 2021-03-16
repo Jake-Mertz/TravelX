@@ -32,7 +32,7 @@ app.post('/api/createUser', (req, res, next) => {
   const userInfoParams = [req.body.name, req.body.email, req.body.password];
   db.query(userInfoSQL, userInfoParams)
     .then(result => {
-      req.session.userId = result.userId;
+      // req.session.userId = result.userId;
       res.status(201).json(result.rows[0]);
     })
     .catch(err => next(err));
@@ -54,7 +54,6 @@ app.get('/api/mapHome', (req, res, next) => {
     from "userInfo" as "ui"
     join "userTable2" as "ut" using ("userId")
   `;
-  // const userId =
   db.query(userListSQL)
     .then(result => {
       const users = result.rows;

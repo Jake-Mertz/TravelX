@@ -14,31 +14,38 @@ export default class App extends React.Component {
       // message: null,
       // isLoading: true
       view: {
-        name: 'home-page',
+        name: 'landing-page',
         params: {}
       },
-      user: []
+      userId: [],
+      name: []
     };
     this.setView = this.setView.bind(this);
     this.handlePhotoSubmit = this.handlePhotoSubmit.bind(this);
     this.handleUserSubmit = this.handleUserSubmit.bind(this);
   }
 
-  handleUserSubmit(name, email, password) {
+  handleUserSubmit(userId, name, email, password) {
     const userInfo = {
+      userId: userId,
       name: name,
       email: email,
       password: password
     };
     // const newUserData = this.state.user.slice();
+    // const newUserId = this.state.userId.slice();
+    // const newUserName = this.state.name.slice();
     fetch('/api/createUser', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userInfo)
     })
       .then(res => res.json())
-      // .then(data => newUserData.push(data))
-      // .then(() => this.setState({ user: newUserData }))
+      // .then(data => newUserId.push(data.userId))
+      // .then(data => newUserName.push(data.name))
+      // .then(() => this.setState({ userId: newUserId }))
+      // .then(() => this.setState({ name: newUserName})
+      // .then(res => res.json(this.state.userId, this.state.name))
       .catch(err => console.error(err));
   }
 
