@@ -19,22 +19,22 @@ function SignUpInterests(props) {
         <div className="interests-form-container-container">
           <div className="interests-form-container">
             <form className="interests-form">
-              <input type="checkbox" id="shopping" name="shopping" value="shopping" className="interests-input"></input>
+              <input type="checkbox" id="shopping" name="interests" value="shopping" className="interests-input"></input>
               <label className="interests-form-label">Shopping</label>
               <br></br>
-              <input type="checkbox" id="nightlife" name="nightlife" value="nightlife" className="interests-input"></input>
+              <input type="checkbox" id="nightlife" name="interests" value="nightlife" className="interests-input"></input>
               <label className="interests-form-label">Nightlife</label>
               <br></br>
-              <input type="checkbox" id="hiking" name="hiking" value="hiking" className="interests-input"></input>
+              <input type="checkbox" id="hiking" name="interests" value="hiking" className="interests-input"></input>
               <label className="interests-form-label">Hiking</label>
               <br></br>
-              <input type="checkbox" id="arts n culture" name="arts n culture" value="arts n culture" className="interests-input"></input>
+              <input type="checkbox" id="arts n culture" name="interests" value="arts n culture" className="interests-input"></input>
               <label className="interests-form-label">Arts & Culture</label>
               <br></br>
-              <input type="checkbox" id="food" name="food" value="food" className="interests-input"></input>
+              <input type="checkbox" id="food" name="interests" value="food" className="interests-input"></input>
               <label className="interests-form-label">Food</label>
               <br></br>
-              <input type="checkbox" id="sightseeing" name="sightseeing" value="sightseeing" className="interests-input"></input>
+              <input type="checkbox" id="sightseeing" name="interests" value="sightseeing" className="interests-input"></input>
               <label className="interests-form-label">Sightseeing</label>
               {/* <input type="submit" value="Submit" className="join-sign-up-buttons" onClick={() => signUpComplete()}>Done!</input> */}
             </form>
