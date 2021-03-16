@@ -54,7 +54,6 @@ app.get('/api/mapHome', (req, res, next) => {
     from "userInfo" as "ui"
     join "userTable2" as "ut" using ("userId")
   `;
-  // const userId =
   db.query(userListSQL)
     .then(result => {
       const users = result.rows;

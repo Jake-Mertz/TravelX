@@ -14,7 +14,7 @@ export default class App extends React.Component {
       // message: null,
       // isLoading: true
       view: {
-        name: 'home-page',
+        name: 'landing-page',
         params: {}
       },
       user: []
@@ -24,8 +24,9 @@ export default class App extends React.Component {
     this.handleUserSubmit = this.handleUserSubmit.bind(this);
   }
 
-  handleUserSubmit(name, email, password) {
+  handleUserSubmit(userId, name, email, password) {
     const userInfo = {
+      userId: userId,
       name: name,
       email: email,
       password: password
