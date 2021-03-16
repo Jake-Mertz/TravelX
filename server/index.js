@@ -45,7 +45,7 @@ app.get('/api/mapHome', (req, res, next) => {
     "ui"."userId",
     "ui"."shopping",
     "ui"."nightlife",
-    "ui"."arts and culture",
+    "ui"."artsandculture",
     "ui"."food",
     "ui"."sightseeing",
     "ui"."leisure",
