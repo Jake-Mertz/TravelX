@@ -14,7 +14,7 @@ export default class App extends React.Component {
       // message: null,
       // isLoading: true
       view: {
-        name: 'home-page',
+        name: 'landing-page',
         params: {}
       },
       user: []
@@ -25,11 +25,13 @@ export default class App extends React.Component {
   }
 
   handleUserSubmit(name, email, password) {
+    event.preventDefault();
     const userInfo = {
       name: name,
       email: email,
       password: password
     };
+    // const newUserData = [];
     // const newUserData = this.state.user.slice();
     fetch('/api/createUser', {
       method: 'POST',
@@ -37,7 +39,7 @@ export default class App extends React.Component {
       body: JSON.stringify(userInfo)
     })
       .then(res => res.json())
-      // .then(data => newUserData.push(data))
+      // .then(data => console.log(data))
       // .then(() => this.setState({ user: newUserData }))
       .catch(err => console.error(err));
   }
