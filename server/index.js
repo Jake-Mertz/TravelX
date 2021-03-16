@@ -45,13 +45,13 @@ app.get('/api/mapHome', (req, res, next) => {
     "ui"."userId",
     "ui"."shopping",
     "ui"."nightlife",
-    "ui"."artsnculture",
+    "ui"."arts and culture",
     "ui"."food",
     "ui"."sightseeing",
     "ui"."leisure",
     "ut"."name",
     "ut"."userId"
-    from "userInfo" as "ui"
+    from "userinfo3" as "ui"
     join "userTable2" as "ut" using ("userId")
   `;
   db.query(userListSQL)

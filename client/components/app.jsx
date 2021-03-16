@@ -14,7 +14,7 @@ export default class App extends React.Component {
       // message: null,
       // isLoading: true
       view: {
-        name: 'landing-page',
+        name: 'home-page',
         params: {}
       },
       user: []
