@@ -7,7 +7,7 @@
 
 
 /* //////////////////////////////////////////////////////// */
-/* Login / Sign-up pages: common elements */
+/* Landing / Login / Sign-up pages: common elements */
 
 .intro-page-container {
   width: 100vw;
@@ -67,6 +67,9 @@
  font-size: 13px;
 
 }
+
+/* /////////////////////////////////////////////////////////////////////// */
+/* Landing / Login / Sign-up Pages */
 
 /* landing page */
 
@@ -153,8 +156,9 @@
   text-align: left;
 }
 
-/* ////////////////////////////////////////////////////////////////////////// */
-/* Home Page */
+/* //////////////////////////////////////////////////////////////////////////////// */
+/* Header */
+
 .header {
   width: 100%;
   height: 8%;
@@ -174,31 +178,19 @@
   padding: 0 0 0 6.5%;
 }
 
-.home-search-results-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 8%;
-  /* width: 75%; */
-}
-
-/* .home-hardcoded-user-example {
-  width: 50%;
-} */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* Home Page */
 
 .user-list-container {
   margin-top: 5%;
   width: 100vw;
   display: flex;
   justify-content: center;
-  /* flex-direction: column; */
-  /* border-style: solid; */
 }
 
 .user-list {
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
-  /* border-style: solid; */
 }
 
 .home-photo {
@@ -212,20 +204,9 @@
 
 .user-card {
   display: flex;
-  /* border-style: solid; */
   padding: 2% 3%;
   margin-bottom: 2%;
   border-radius: 30px;
-  /* border-bottom-style: solid;
-  border-bottom-width: 3px;
-  border-bottom-color: rgb(179, 179, 179);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-left-color:  rgb(179, 179, 179);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-right-color:  rgb(179, 179, 179);
-  border-top-style: hidden; */
   box-shadow: 0px 3px 3px 0px gray;
 }
 
@@ -235,7 +216,6 @@
 }
 
 .user-info-container {
-  /* background-color: lightblue; */
   width: 60%;
   padding: 1% 0% 0% 3%;
 }
@@ -243,12 +223,10 @@
 .user-card-buttons-container {
   width: 20%;
   display: flex;
-  /* padding-bottom: 1%; */
   align-items: flex-end;
   margin-left: 12%;
   padding: 0% 0% 1% 2%;
 }
-
 .user-card-no {
   width: 40px;
   height: 40px;
@@ -257,7 +235,6 @@
   border: none;
   background-color: gray;
 }
-
 .user-card-yes {
   width: 40px;
   height: 40px;
@@ -265,14 +242,12 @@
   border: none;
   background-color: gray;
 }
-
 .user-card-no:hover {
   background-color: rgb(207, 33, 33);
 }
 .user-card-yes:hover {
   background-color: rgb(27, 207, 27);
 }
-
 .fa-check {
   color: rgb(206, 206, 206);
 }
@@ -281,9 +256,3 @@
 }
 .user-card-yes:hover > .fa-check { color: white}
 .user-card-no:hover > .fa-times { color: white}
-/* .fa-check:hover {
-  color: rgb(255, 255, 255);
-}
-.fa-times:hover {
-  color: rgb(255, 255, 255);
-} */
