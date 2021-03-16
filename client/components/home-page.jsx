@@ -44,7 +44,10 @@ class HomePage extends React.Component {
           <h1 className="home-logo">TravelX</h1>
           <h3 className="slogan-text">Solo travel made easier</h3>
         </div>
-        <div className="user-list">{userListRender}</div>
+        <div className="user-list-container">
+          <div className="user-list">{userListRender}</div>
+        </div>
+
         {/* <div className="home-search-results-container">
           <div className="home-hardcoded-user-example">
             <button className="airplane-photo"></button>

@@ -34,10 +34,18 @@ function UserCard(props) {
   }
 
   return (
-    <div>
-      <button className="home-photo"></button>
-      <h1>{props.name}</h1>
-      <p>{oneInterest()}</p>
+    <div className="user-card">
+      <div className="home-photo-container">
+        <button className="home-photo"></button>
+      </div>
+      <div className="user-info-container">
+        <h1 className="user-card-name">{props.name}</h1>
+        <p>Interests: {oneInterest()}</p>
+      </div>
+      <div className="user-card-buttons-container">
+        <button className="user-card-no"></button>
+        <button className="user-card-yes"></button>
+      </div>
     </div>
   );
 }
