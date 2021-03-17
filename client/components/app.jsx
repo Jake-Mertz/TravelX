@@ -45,6 +45,7 @@ export default class App extends React.Component {
   }
 
   handlePhotoSubmit(event) {
+    event.preventDefault();
     const formData = new FormData(event.target);
     fetch('api/uploads', {
       method: 'POST',
