@@ -48,6 +48,17 @@ class HomePage extends React.Component {
           <div className="user-list">{userListRender}</div>
         </div>
       </div>
+      // <div className="page-container">
+      //   <div className="home-top-row">
+      //     <div className="travelx-logo">TravelX</div>
+      //     <div className="add-trip-bar">
+      //       <form></form>
+      //     </div>
+      //     <div className="profile/log-out"></div>
+      //   </div>
+      //   <div className="my-trips-carousel"></div>
+      //   <div className="matching-container"></div>
+      // </div>
     );
   }
 }
