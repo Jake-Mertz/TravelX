@@ -2,9 +2,15 @@
 /* Global */
 .page-container {
   width: 100vw;
-  height: 100vh;
+  height: 90%;
+  /* background-color: #ffa112; */
+  background-image: linear-gradient(to top, #ffa112, #fdd598);
 }
 
+.footer {
+  height: 100px;
+  background-color: #1c556a;
+}
 
 /* //////////////////////////////////////////////////////// */
 /* Landing / Login / Sign-up pages: common elements */
@@ -59,9 +65,9 @@
   font-size: 55px;
 }
 
-::placeholder {
+/* ::placeholder {
   text-align: center;
-}
+} */
 
 .intro-blurb {
  font-size: 13px;
@@ -107,6 +113,10 @@
 .sign-up-form-input {
   margin-bottom: 5%;
   border-style: none none solid none;
+}
+
+.sign-up-form-input::placeholder {
+  text-align: center;
 }
 
 /* Sign up add Photo page */
@@ -181,6 +191,46 @@
 /* ////////////////////////////////////////////////////////////////////////// */
 /* Home Page */
 
+.home-top-row {
+  display: flex;
+  justify-content: center;
+}
+
+.add-trip-bar {
+  width: 40%;
+  /* height: 5%; */
+  margin: 6% 0 0 8%;
+  /* padding: 0 0 0 2%; */
+  /* display: flex;
+  justify-content: center; */
+}
+
+.add-trip-form {
+  background-color: white;
+  border-radius: 60px;
+  width: 100%;
+  display: flex;
+  padding-left: 6%;
+  /* justify-content: left; */
+}
+
+.add-trip-input-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  width: 25%;
+  margin-left: 3%;
+}
+
+.add-trip-input-label {
+  padding-left: 2px;
+}
+
+.add-trip-input {
+  border: none;
+  background: none;
+}
+
 .user-list-container {
   margin-top: 5%;
   width: 100vw;
@@ -207,7 +257,8 @@
   padding: 2% 3%;
   margin-bottom: 2%;
   border-radius: 30px;
-  box-shadow: 0px 3px 3px 0px gray;
+  background-color: white;
+  /* box-shadow: 0px 3px 3px 0px gray; */
 }
 
 .user-card-name {
