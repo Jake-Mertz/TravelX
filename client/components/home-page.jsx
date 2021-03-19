@@ -66,6 +66,7 @@ class HomePage extends React.Component {
       //   </div>
       // </div>
       <div className="page-container">
+
         <div className="home-top-row">
           <div className="travelx-logo">TravelX</div>
           <div className="add-trip-bar">
@@ -105,7 +106,12 @@ class HomePage extends React.Component {
           </div>
           <div className="profile/log-out"></div>
         </div>
-        <div className="my-trips-carousel"></div>
+
+        <div className="my-trips-container">
+          <div className="my-trips-title">Trips Planned:</div>
+          <div className="my-trips-carousel"></div>
+        </div>
+
         <div className="connections-container">
           <div className="filters-container">
             <h1 className="filters-title">Filters:</h1>
