@@ -1,5 +1,6 @@
 import React from 'react';
 import UserCard from './user-card';
+import UserMatchCard from './user-match-card';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -25,6 +26,22 @@ class HomePage extends React.Component {
       return (
         <div key={user.userId}>
           <UserCard
+            name={user.name}
+            artsandculture={user.artsandculture}
+            food={user.food}
+            leisure={user.leisure}
+            nightlife={user.nightlife}
+            shopping={user.shopping}
+            sightseeing={user.sightseeing}
+            hiking={user.hiking}
+          />
+        </div>
+      );
+    });
+    const userMatchesRender = this.state.userList.map(user => {
+      return (
+        <div key={user.userId}>
+          <UserMatchCard
             name={user.name}
             artsandculture={user.artsandculture}
             food={user.food}
@@ -100,9 +117,13 @@ class HomePage extends React.Component {
             </form>
           </div>
           <div className="user-list-container">
+            <h1 className="user-list-title">Recommended just for you:</h1>
             <div className="user-list">{userListRender}</div>
           </div>
-          <div className="matches-container"></div>
+          <div className="matches-container">
+            <h1 className="matches-list-title">Your Matches:</h1>
+            <div className="matches-list">{userMatchesRender}</div>
+          </div>
         </div>
         <div className="footer"></div>
       </div>

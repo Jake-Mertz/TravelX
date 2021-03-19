@@ -1,7 +1,7 @@
 /* ///////////////////////////////////////////////////////// */
 /* Global */
 .page-container {
-  width: 100vw;
+  width: 99vw;
   height: 90%;
   /* background-color: #ffa112; */
   background-image: linear-gradient(to top, #ffa112, #fdd598);
@@ -193,13 +193,18 @@
 
 .home-top-row {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+}
+
+.travelx-logo {
+  margin: 3% 0 0 3%;
+  font-size: 35px;
 }
 
 .add-trip-bar {
   width: 40%;
   /* height: 5%; */
-  margin: 6% 0 0 8%;
+  margin: 3% 0 0 4.5%;
   /* padding: 0 0 0 2%; */
   /* display: flex;
   justify-content: center; */
@@ -250,16 +255,23 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 57%;
   padding: 5%;
   border-radius: 20px;
-  margin-left: 30%;
+  margin-left: 33%;
 }
 
 .user-list-container {
   width: 40%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  margin-right: 3%;
+}
+
+.user-list-title {
+  font-size: 18px;
+  margin-left: 6%;
 }
 
 .user-list {
@@ -332,3 +344,16 @@
 }
 .user-card-yes:hover > .fa-check { color: white}
 .user-card-no:hover > .fa-times { color: white}
+
+.matches-container {
+
+}
+
+.matches-list-title {
+  font-size: 18px;
+  margin-left: 5%;
+}
+
+.matches-list {
+  width: 50%;
+}
