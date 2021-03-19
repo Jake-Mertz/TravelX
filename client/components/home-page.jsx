@@ -104,7 +104,14 @@ class HomePage extends React.Component {
               {/* <input type="submit" value="Submit">Add trip</input> */}
             </form>
           </div>
-          <div className="profile/log-out"></div>
+          <div className="home-page-option-container">
+            <button className="home-page-option-button"><i className="far fa-user-circle"></i></button>
+            <button className="home-page-option-button">Messages</button>
+            <button className="home-page-option-button">Profile</button>
+            <div className="home-page-option-spacer"></div>
+            <button className="home-page-option-button">Help</button>
+            <button className="home-page-option-button">Log Out</button>
+          </div>
         </div>
 
         <div className="my-trips-container">
