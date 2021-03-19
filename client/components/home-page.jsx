@@ -38,27 +38,66 @@ class HomePage extends React.Component {
       );
     });
     return (
-      <div className="page-container">
-        {/* <button onClick={() => this.props.setView('profile-page', {})}>Profile</button> */}
-        <div className="header">
-          <h1 className="home-logo">TravelX</h1>
-          <h3 className="slogan-text">Solo travel made easier</h3>
-        </div>
-        <div className="user-list-container">
-          <div className="user-list">{userListRender}</div>
-        </div>
-      </div>
       // <div className="page-container">
-      //   <div className="home-top-row">
-      //     <div className="travelx-logo">TravelX</div>
-      //     <div className="add-trip-bar">
-      //       <form></form>
-      //     </div>
-      //     <div className="profile/log-out"></div>
+      //   {/* <button onClick={() => this.props.setView('profile-page', {})}>Profile</button> */}
+      //   <div className="header">
+      //     <h1 className="home-logo">TravelX</h1>
+      //     <h3 className="slogan-text">Solo travel made easier</h3>
       //   </div>
-      //   <div className="my-trips-carousel"></div>
-      //   <div className="matching-container"></div>
+      //   <div className="user-list-container">
+      //     <div className="user-list">{userListRender}</div>
+      //   </div>
       // </div>
+      <div className="page-container">
+        <div className="home-top-row">
+          <div className="travelx-logo">TravelX</div>
+          <div className="add-trip-bar">
+            <form className="add-trip-form">
+              <div className="add-trip-input-container">
+                <label className="add-trip-input-label">Destination</label>
+                <input
+                  type="text"
+                  id="destination"
+                  name="trip"
+                  placeholder="Where are you going?"
+                  className="add-trip-input"
+                ></input>
+              </div>
+              <div className="add-trip-input-container">
+                <label className="add-trip-input-label">Arrival</label>
+                <input
+                  type="text"
+                  id="arrival"
+                  name="trip"
+                  placeholder="Add dates"
+                  className="add-trip-input"
+                ></input>
+              </div>
+              <div className="add-trip-input-container">
+                <label className="add-trip-input-label">Departure</label>
+                <input
+                  type="text"
+                  id="departure"
+                  name="trip"
+                  placeholder="Add dates"
+                  className="add-trip-input"
+                ></input>
+              </div>
+              {/* <input type="submit" value="Submit">Add trip</input> */}
+            </form>
+          </div>
+          <div className="profile/log-out"></div>
+        </div>
+        <div className="my-trips-carousel"></div>
+        <div className="connections-container">
+          <div className="matches-filters"></div>
+          <div className="user-list-container">
+            <div className="user-list">{userListRender}</div>
+          </div>
+          <div className="matches-container"></div>
+        </div>
+        <div className="footer"></div>
+      </div>
     );
   }
 }

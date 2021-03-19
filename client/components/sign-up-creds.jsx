@@ -19,7 +19,7 @@ class SignUpCredentials extends React.Component {
   signUpCredSubmit(event) {
     // event.preventDefault();
     this.props.handleUserSubmit(this.state.name, this.state.email, this.state.password);
-    // this.props.setView('sign-up-photo', {});
+    // this.props.setView('sign-upa-photo', {});
   }
 
   render() {
