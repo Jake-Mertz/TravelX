@@ -21,13 +21,18 @@ function UserMatchCard(props) {
   }
 
   return (
-    <div className="user-card">
-      <div className="home-photo-container">
-        <button className="home-photo"></button>
+    <div className="user-match-card">
+      <div className="user-match-photo-and-info-container">
+        <div className="user-match-photo-container">
+          <button className="home-photo"></button>
+        </div>
+        <div className="user-match-info-container">
+          <h1 className="user-card-name">{props.name}</h1>
+          <p>Interests: {userInterestMap()}</p>
+        </div>
       </div>
-      <div className="user-match-info-container">
-        <h1 className="user-card-name">{props.name}</h1>
-        <p>Interests: {userInterestMap()}</p>
+      <div className="user-match-message-button-container">
+        <button className="user-match-message-button">Send a Message</button>
       </div>
     </div>
   );

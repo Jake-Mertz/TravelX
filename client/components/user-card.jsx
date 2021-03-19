@@ -22,12 +22,14 @@ function UserCard(props) {
 
   return (
     <div className="user-card">
-      <div className="home-photo-container">
-        <button className="home-photo"></button>
-      </div>
-      <div className="user-info-container">
-        <h1 className="user-card-name">{props.name}</h1>
-        <p>Interests: {userInterestMap()}</p>
+      <div className="user-photo-and-info-container">
+        <div>
+          <button className="home-photo"></button>
+        </div>
+        <div className="user-info-container">
+          <h1 className="user-card-name">{props.name}</h1>
+          <p>Interests: {userInterestMap()}</p>
+        </div>
       </div>
       <div className="user-card-buttons-container">
         <button className="user-card-no"><i className="fas fa-times"></i></button>
