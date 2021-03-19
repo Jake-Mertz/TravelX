@@ -12,7 +12,8 @@
   background-color: #1c556a;
 }
 
-/* //////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////// */
 /* Landing / Login / Sign-up pages: common elements */
 
 .intro-page-container {
@@ -74,6 +75,7 @@
 
 }
 
+/* /////////////////////////////////////////////////////////////////////// */
 /* /////////////////////////////////////////////////////////////////////// */
 /* Landing / Login / Sign-up Pages */
 
@@ -167,6 +169,7 @@
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////// */
 /* Header */
 
 .header {
@@ -189,8 +192,11 @@
 }
 
 /* ////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
 /* Home Page */
 
+/* //////////////////////////////////////////////////////////////////////// */
+/* Home Top Row */
 .home-top-row {
   display: flex;
   /* justify-content: center; */
@@ -236,10 +242,16 @@
   background: none;
 }
 
+/* /////////////////////////////////////////////////////////////////// */
+/* Home Page Connections */
+
 .connections-container {
   display: flex;
   margin-top: 5%;
 }
+
+/* /////////////////////////////////////////////////////////////////// */
+/* Home Page Filters */
 
 .filters-container {
   width: 30%;
@@ -261,9 +273,12 @@
   margin-left: 33%;
 }
 
+/* ////////////////////////////////////////////////////////////// */
+/* Home Page Recommended Users */
+
 .user-list-container {
   width: 40%;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   flex-direction: column;
   margin-right: 3%;
@@ -290,17 +305,16 @@
 }
 
 .user-card {
-  display: flex;
+  /* display: flex; */
   padding: 2% 3%;
   margin-bottom: 2%;
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: white;
   /* box-shadow: 0px 3px 3px 0px gray; */
 }
 
-.user-card-name {
-  font-size: 15px;
-  margin-bottom: 4%;
+.user-photo-and-info-container {
+  display: flex;
 }
 
 .user-info-container {
@@ -308,46 +322,53 @@
   padding: 1% 0% 0% 3%;
 }
 
+.user-card-name {
+  font-size: 15px;
+  margin-bottom: 4%;
+}
+
 .user-card-buttons-container {
-  width: 20%;
   display: flex;
-  align-items: flex-end;
-  margin-left: 12%;
-  padding: 0% 0% 1% 2%;
+  justify-content: center;
+  /* padding: 0% 0% 1% 2%; */
+  margin: 2% 0 2% 0;
 }
 .user-card-no {
   width: 40px;
   height: 40px;
   border-radius: 60%;
-  margin-right: 6%;
+  margin-right: 2%;
   border: none;
-  background-color: gray;
+  background-color: #fa6d75;
 }
 .user-card-yes {
   width: 40px;
   height: 40px;
   border-radius: 60%;
   border: none;
-  background-color: gray;
+  background-color: #30c3b2;
 }
-.user-card-no:hover {
+/* .user-card-no:hover {
   background-color: rgb(207, 33, 33);
 }
 .user-card-yes:hover {
   background-color: rgb(27, 207, 27);
-}
+} */
 .fa-check {
-  color: rgb(206, 206, 206);
+  color: white;
 }
 .fa-times {
-  color: rgb(206, 206, 206);
+  color: white;
 }
-.user-card-yes:hover > .fa-check { color: white}
-.user-card-no:hover > .fa-times { color: white}
+/* .user-card-yes:hover > .fa-check { color: white}
+.user-card-no:hover > .fa-times { color: white} */
 
-.matches-container {
+/* ////////////////////////////////////////////////////////////////////////// */
+/* Home User Matches */
 
-}
+/* .matches-container {
+
+} */
 
 .matches-list-title {
   font-size: 18px;
@@ -356,4 +377,38 @@
 
 .matches-list {
   width: 50%;
+}
+
+.user-match-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.user-match-photo-and-info-container {
+  display: flex;
+  margin: 2% 3%;
+}
+
+.user-match-info-container {
+  padding: 1% 0% 0% 3%;
+}
+
+.user-match-message-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #1c556a;
+  border-radius: 0px 0px 20px 20px;
+  padding: 1.5% 0 3% 0;
+}
+
+.user-match-message-button {
+  border-style: none;
+  width: 50%;
+  font-size: 12px;
+  background-color: #1c556a;
+  color: white;
 }
