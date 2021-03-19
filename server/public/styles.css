@@ -231,9 +231,33 @@
   background: none;
 }
 
-.user-list-container {
+.connections-container {
+  display: flex;
   margin-top: 5%;
-  width: 100vw;
+}
+
+.filters-container {
+  width: 30%;
+  margin-left: 5%;
+}
+
+.filters-title {
+  font-size: 18px;
+  margin-left: 35%;
+}
+
+.filters-form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 5%;
+  border-radius: 20px;
+  margin-left: 30%;
+}
+
+.user-list-container {
+  width: 40%;
   display: flex;
   justify-content: center;
 }
@@ -241,6 +265,7 @@
 .user-list {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .home-photo {

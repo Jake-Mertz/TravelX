@@ -90,7 +90,15 @@ class HomePage extends React.Component {
         </div>
         <div className="my-trips-carousel"></div>
         <div className="connections-container">
-          <div className="matches-filters"></div>
+          <div className="filters-container">
+            <h1 className="filters-title">Filters:</h1>
+            <form className="filters-form">
+              <label>Age Range</label>
+              <label>Destination</label>
+              <label>Interests</label>
+              <label>Split Costs</label>
+            </form>
+          </div>
           <div className="user-list-container">
             <div className="user-list">{userListRender}</div>
           </div>
