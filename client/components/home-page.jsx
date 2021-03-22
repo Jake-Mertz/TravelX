@@ -9,10 +9,14 @@ class HomePage extends React.Component {
     this.state = {
       user: null,
       userList: [],
-      userTrips: []
+      userTrips: [],
+      destination: [],
+      arrival: [],
+      departure: []
     };
     this.getUsers = this.getUsers.bind(this);
     this.getTrips = this.getTrips.bind(this);
+    this.handleCreateTrip = this.handleCreateTrip.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +34,11 @@ class HomePage extends React.Component {
     fetch('/api/mapTrips', { method: 'GET' })
       .then(res => res.json())
       .then(data => this.setState({ userTrips: data }));
+  }
+
+  handleCreateTrip(res) {
+    this.setState({ [event.target.name]: event.target.value });
+    // console.log(res);
   }
 
   render() {
@@ -105,29 +114,39 @@ class HomePage extends React.Component {
                   name="trip"
                   placeholder="Where are you going?"
                   className="add-trip-input"
+                  value={this.state.destination}
+                  onChange={this.handleCreateTrip}
                 ></input>
               </div>
               <div className="add-trip-input-container">
                 <label className="add-trip-input-label">Arrival</label>
                 <input
-                  type="text"
+                  type="date"
                   id="arrival"
                   name="trip"
                   placeholder="Add dates"
                   className="add-trip-input"
+                  value={this.state.arrival}
+                  onChange={this.handleCreateTrip}
                 ></input>
               </div>
               <div className="add-trip-input-container">
                 <label className="add-trip-input-label">Departure</label>
                 <input
-                  type="text"
+                  type="date"
                   id="departure"
                   name="trip"
                   placeholder="Add dates"
                   className="add-trip-input"
+                  value={this.state.departure}
+                  onChange={this.handleCreateTrip}
                 ></input>
+                <input
+                  type="submit"
+                  value="Add trip"
+                  onClick={() => this.someFunction()}
+                />
               </div>
-              {/* <input type="submit" value="Submit">Add trip</input> */}
             </form>
           </div>
 
