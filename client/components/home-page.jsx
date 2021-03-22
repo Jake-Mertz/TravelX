@@ -141,9 +141,11 @@ class HomePage extends React.Component {
           </div>
         </div>
 
-        <div className="my-trips-container">
-          <div className="my-trips-title">Trips Planned:</div>
-          <div className="my-trips-carousel">{userTripsRender}</div>
+        <div className="my-trips-container-container">
+          <div className="my-trips-container">
+            <div className="my-trips-title">Trips Planned:</div>
+            <div className="my-trips-carousel">{userTripsRender}</div>
+          </div>
         </div>
 
         <div className="connections-container">
