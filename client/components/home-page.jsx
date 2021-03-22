@@ -1,24 +1,35 @@
 import React from 'react';
 import UserCard from './user-card';
 import UserMatchCard from './user-match-card';
+import TripCard from './trip-card';
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       user: null,
-      userList: []
+      userList: [],
+      userTrips: []
     };
+    this.getUsers = this.getUsers.bind(this);
+    this.getTrips = this.getTrips.bind(this);
   }
 
   componentDidMount() {
     this.getUsers();
+    this.getTrips();
   }
 
   getUsers() {
     fetch('/api/mapHome', { method: 'GET' })
       .then(res => res.json())
       .then(data => this.setState({ userList: data }));
+  }
+
+  getTrips() {
+    fetch('/api/mapTrips', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => this.setState({ userTrips: data }));
   }
 
   render() {
@@ -50,6 +61,21 @@ class HomePage extends React.Component {
             shopping={user.shopping}
             sightseeing={user.sightseeing}
             hiking={user.hiking}
+          />
+        </div>
+      );
+    });
+    const userTripsRender = this.state.userTrips.map(user => {
+      return (
+        <div key={user.tripId}>
+          <TripCard
+            destination={user.destination}
+            arrivalYear={user.arrivalYear}
+            arrivalMonth={user.arrivalMonth}
+            arrivalDay={user.arrivalDay}
+            departureYear={user.departureYear}
+            departureMonth={user.departureMonth}
+            departureDay={user.departureDay}
           />
         </div>
       );
@@ -104,6 +130,7 @@ class HomePage extends React.Component {
               {/* <input type="submit" value="Submit">Add trip</input> */}
             </form>
           </div>
+
           <div className="home-page-option-container">
             <button className="home-page-option-button"><i className="far fa-user-circle"></i></button>
             <button className="home-page-option-button">Messages</button>
@@ -116,7 +143,7 @@ class HomePage extends React.Component {
 
         <div className="my-trips-container">
           <div className="my-trips-title">Trips Planned:</div>
-          <div className="my-trips-carousel"></div>
+          <div className="my-trips-carousel">{userTripsRender}</div>
         </div>
 
         <div className="connections-container">

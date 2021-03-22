@@ -38,6 +38,20 @@ app.post('/api/createUser', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.post('/api/createTrip', (req, res, next) => {
+  const tripInfoSQL = `
+    insert into "userTrips" ("userId", "destination", "arrivalYear", "arrivalMonth", "arrivalDay", "departureYear", "departureMonth", "departureDay")
+    values ($1, $2, $3, $4, $5, $6, $7, $8)
+    returning "tripId", "userId", "destination", "arrivalYear", "arrivalMonth", "arrivalDay", "departureYear", "departureMonth", "departureDay"
+  `;
+  const tripInfoParams = [req.body.userId, req.body.destination, req.body.arrivalYear, req.body.arrivalMonth, req.body.arrivalDay, req.body.departureYear, req.body.departureMonth, req.body.departureDay];
+  db.query(tripInfoSQL, tripInfoParams)
+    .then(result => {
+      res.status(201).json(result.rows[0]);
+    })
+    .catch(err => next(err));
+});
+
 // Map users to home page
 app.get('/api/mapHome', (req, res, next) => {
   const userListSQL = `
@@ -58,6 +72,27 @@ app.get('/api/mapHome', (req, res, next) => {
     .then(result => {
       const users = result.rows;
       res.status(200).json(users);
+    })
+    .catch(err => next(err));
+});
+
+app.get('/api/mapTrips', (req, res, next) => {
+  const userTripSQL = `
+    select
+    "tripId",
+    "destination",
+    "arrivalYear",
+    "arrivalMonth",
+    "arrivalDay",
+    "departureYear",
+    "departureMonth",
+    "departureDay"
+    from "userTrips"
+  `;
+  db.query(userTripSQL)
+    .then(result => {
+      const trips = result.rows;
+      res.status(200).json(trips);
     })
     .catch(err => next(err));
 });
@@ -114,6 +149,8 @@ app.post('api/uploads', uploadsMiddleware, (req, res, next) => {
 //     })
 //     .catch(err => next(err));
 // });
+
+// ///////////////////////////////////////////////////////////////////////////////////////////
 
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
