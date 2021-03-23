@@ -46,9 +46,9 @@ class HomePage extends React.Component {
   createTrip(destination, arrival, departure) {
     event.preventDefault();
     const tripInfo = {
-      destination: destination,
-      arrival: arrival,
-      departure: departure
+      destination: this.state.destination,
+      arrival: this.state.arrival,
+      departure: this.state.departure
     };
     fetch('/api/createTrip2', {
       method: 'POST',
