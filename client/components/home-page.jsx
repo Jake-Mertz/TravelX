@@ -107,29 +107,19 @@ class HomePage extends React.Component {
       );
     });
     return (
-      // <div className="page-container">
-      //   {/* <button onClick={() => this.props.setView('profile-page', {})}>Profile</button> */}
-      //   <div className="header">
-      //     <h1 className="home-logo">TravelX</h1>
-      //     <h3 className="slogan-text">Solo travel made easier</h3>
-      //   </div>
-      //   <div className="user-list-container">
-      //     <div className="user-list">{userListRender}</div>
-      //   </div>
-      // </div>
       <div className="page-container">
 
         <div className="home-top-row">
           <div className="travelx-logo">TravelX</div>
 
           <div className="add-trip-bar">
-            <form className="add-trip-form">
+            <form className="add-trip-form" method="POST">
               <div className="add-trip-input-container">
                 <label className="add-trip-input-label">Destination</label>
                 <input
                   type="text"
                   id="destination"
-                  name="trip"
+                  name="destination"
                   placeholder="Where are you going?"
                   className="add-trip-input"
                   value={this.state.destination}
@@ -141,7 +131,7 @@ class HomePage extends React.Component {
                 <input
                   type="date"
                   id="arrival"
-                  name="trip"
+                  name="arrival"
                   placeholder="Add dates"
                   className="add-trip-input"
                   value={this.state.arrival}
@@ -153,7 +143,7 @@ class HomePage extends React.Component {
                 <input
                   type="date"
                   id="departure"
-                  name="trip"
+                  name="departure"
                   placeholder="Add dates"
                   className="add-trip-input"
                   value={this.state.departure}
@@ -162,6 +152,7 @@ class HomePage extends React.Component {
                 <input
                   type="submit"
                   value="Add trip"
+                  name="Submit"
                   onClick={() => this.createTrip()}
                 />
                 {/* <button onClick={() => this.createTrip()}>Add trip</button> */}
