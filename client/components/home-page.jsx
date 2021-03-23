@@ -34,9 +34,6 @@ class HomePage extends React.Component {
     fetch('/api/mapTrips2', { method: 'GET' })
       .then(res => res.json())
       .then(data => this.setState({ userTrips: data }));
-    // .then(data => this.setState({ destination: data.destination }))
-    // .then(data => this.setState({ arrival: data.arrival }))
-    // .then(data => this.setState({ departure: data.departure }));
   }
 
   getUsers() {
@@ -63,7 +60,9 @@ class HomePage extends React.Component {
       body: JSON.stringify(tripInfo)
     })
       .then(res => res.json())
-      .then(this.getTrips())
+      // .then(this.getTrips())
+      // .then(this.render())
+      // .then(this.setState({ state: this.state }))
       .catch(err => console.error(err));
   }
 
