@@ -36,6 +36,14 @@ class UserCard2 extends React.Component {
       }
       return userInterests;
     };
+
+    // const recommendNo = () => {
+    //   console.log('hi!');
+    // };
+    // const recommendYes = () => {
+    //   const userMatchId = event.target;
+    //   console.log(userMatchId);
+    // };
     return (
       <div className="user-card">
         <div className="user-photo-and-info-container">
@@ -48,8 +56,8 @@ class UserCard2 extends React.Component {
           </div>
         </div>
         <div className="user-card-buttons-container">
-          <button className="user-card-no"><i className="fas fa-times"></i></button>
-          <button className="user-card-yes"><i className="fas fa-check"></i></button>
+          {/* <button className="user-card-no" onClick={recommendNo()}><i className="fas fa-times"></i></button>
+          <button className="user-card-yes" onClick={recommendYes()}><i className="fas fa-check"></i></button> */}
         </div>
       </div>
     );
