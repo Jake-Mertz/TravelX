@@ -6,7 +6,7 @@ function TripCard(props) {
       <div className="trip-card-photo"></div>
       <div className="trip-info-container">
         <div className="trip-card-destination">{props.destination}</div>
-        <div className="trip-card-dates">{props.arrivalMonth}/{props.arrivalDay} - {props.departureMonth}/{props.departureDay} {props.arrivalYear}</div>
+        <div className="trip-card-dates">{props.arrival} - {props.departure}</div>
       </div>
       {/* <button className="trip-card-edit-button"></button> */}
     </div>

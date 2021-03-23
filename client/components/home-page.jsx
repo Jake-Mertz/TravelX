@@ -11,7 +11,7 @@ class HomePage extends React.Component {
       user: null,
       userList: [],
       userTrips: [],
-      destination: '',
+      destination: [],
       arrival: [],
       departure: []
     };
@@ -26,20 +26,23 @@ class HomePage extends React.Component {
     this.getTrips();
   }
 
-  componentDidUpdate() {
-    this.getTrips();
+  // componentDidUpdate() {
+  //   this.getTrips();
+  // }
+
+  getTrips() {
+    fetch('/api/mapTrips2', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => this.setState({ userTrips: data }));
+    // .then(data => this.setState({ destination: data.destination }))
+    // .then(data => this.setState({ arrival: data.arrival }))
+    // .then(data => this.setState({ departure: data.departure }));
   }
 
   getUsers() {
     fetch('/api/mapHome', { method: 'GET' })
       .then(res => res.json())
       .then(data => this.setState({ userList: data }));
-  }
-
-  getTrips() {
-    fetch('/api/mapTrips2', { method: 'GET' })
-      .then(res => res.json())
-      .then(data => this.setState({ userTrips: data }));
   }
 
   handleCreateTrip(res) {
@@ -60,6 +63,7 @@ class HomePage extends React.Component {
       body: JSON.stringify(tripInfo)
     })
       .then(res => res.json())
+      .then(this.getTrips())
       .catch(err => console.error(err));
   }
 
@@ -117,12 +121,8 @@ class HomePage extends React.Component {
         <div key={user.tripId}>
           <TripCard
             destination={user.destination}
-            arrivalYear={user.arrivalYear}
-            arrivalMonth={user.arrivalMonth}
-            arrivalDay={user.arrivalDay}
-            departureYear={user.departureYear}
-            departureMonth={user.departureMonth}
-            departureDay={user.departureDay}
+            arrival={user.arrival}
+            departure={user.departure}
           />
         </div>
       );

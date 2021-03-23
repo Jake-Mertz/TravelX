@@ -118,7 +118,7 @@ app.get('/api/mapTrips2', (req, res, next) => {
     "destination",
     "arrival",
     "departure"
-    from "userTrips3"
+    from "userTrips4"
   `;
   db.query(userTripSQL)
     .then(result => {
