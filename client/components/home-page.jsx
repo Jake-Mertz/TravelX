@@ -10,13 +10,14 @@ class HomePage extends React.Component {
       user: null,
       userList: [],
       userTrips: [],
-      destination: [],
-      arrival: [],
-      departure: []
+      destination: '',
+      arrival: '',
+      departure: ''
     };
     this.getUsers = this.getUsers.bind(this);
     this.getTrips = this.getTrips.bind(this);
     this.handleCreateTrip = this.handleCreateTrip.bind(this);
+    this.createTrip = this.createTrip.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +40,22 @@ class HomePage extends React.Component {
   handleCreateTrip(res) {
     this.setState({ [event.target.name]: event.target.value });
     // console.log(res);
+  }
+
+  createTrip(destination, arrival, departure) {
+    event.preventDefault();
+    const tripInfo = {
+      destination: destination,
+      arrival: arrival,
+      departure: departure
+    };
+    fetch('/api/createTrip2', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(tripInfo)
+    })
+      .then(res => res.json())
+      .catch(err => console.error(err));
   }
 
   render() {
@@ -104,6 +121,7 @@ class HomePage extends React.Component {
 
         <div className="home-top-row">
           <div className="travelx-logo">TravelX</div>
+
           <div className="add-trip-bar">
             <form className="add-trip-form">
               <div className="add-trip-input-container">
@@ -144,8 +162,9 @@ class HomePage extends React.Component {
                 <input
                   type="submit"
                   value="Add trip"
-                  onClick={() => this.someFunction()}
+                  onClick={() => this.createTrip()}
                 />
+                {/* <button onClick={() => this.createTrip()}>Add trip</button> */}
               </div>
             </form>
           </div>
