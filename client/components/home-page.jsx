@@ -1,7 +1,8 @@
 import React from 'react';
-import UserCard from './user-card';
+// import UserCard from './user-card';
 import UserMatchCard from './user-match-card';
 import TripCard from './trip-card';
+import UserCard2 from './user-card2';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -59,10 +60,26 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const userListRender = this.state.userList.map(user => {
+    // const userListRender = this.state.userList.map(user => {
+    //   return (
+    //     <div key={user.userId}>
+    //       <UserCard
+    //         name={user.name}
+    //         artsandculture={user.artsandculture}
+    //         food={user.food}
+    //         leisure={user.leisure}
+    //         nightlife={user.nightlife}
+    //         shopping={user.shopping}
+    //         sightseeing={user.sightseeing}
+    //         hiking={user.hiking}
+    //       />
+    //     </div>
+    //   );
+    // });
+    const userListRender2 = this.state.userList.map(user => {
       return (
         <div key={user.userId}>
-          <UserCard
+          <UserCard2
             name={user.name}
             artsandculture={user.artsandculture}
             food={user.food}
@@ -189,7 +206,7 @@ class HomePage extends React.Component {
           </div>
           <div className="user-list-container">
             <h1 className="user-list-title">Recommended just for you:</h1>
-            <div className="user-list">{userListRender}</div>
+            <div className="user-list">{userListRender2}</div>
           </div>
           <div className="matches-container">
             <h1 className="matches-list-title">Your Matches:</h1>
