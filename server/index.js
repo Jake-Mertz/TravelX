@@ -40,7 +40,7 @@ app.post('/api/createUser', (req, res, next) => {
 
 app.post('/api/createTrip2', (req, res, next) => {
   const tripInfoSQL = `
-    insert into "userTrips2" ("destination", "arrival", "departure")
+    insert into "userTrips4" ("destination", "arrival", "departure")
     values ($1, $2, $3)
     returning "tripId", "destination", "arrival", "departure"
     `;
@@ -102,6 +102,23 @@ app.get('/api/mapTrips', (req, res, next) => {
     "departureMonth",
     "departureDay"
     from "userTrips"
+  `;
+  db.query(userTripSQL)
+    .then(result => {
+      const trips = result.rows;
+      res.status(200).json(trips);
+    })
+    .catch(err => next(err));
+});
+
+app.get('/api/mapTrips2', (req, res, next) => {
+  const userTripSQL = `
+    select
+    "tripId",
+    "destination",
+    "arrival",
+    "departure"
+    from "userTrips3"
   `;
   db.query(userTripSQL)
     .then(result => {

@@ -12,8 +12,8 @@ class HomePage extends React.Component {
       userList: [],
       userTrips: [],
       destination: '',
-      arrival: '',
-      departure: ''
+      arrival: [],
+      departure: []
     };
     this.getUsers = this.getUsers.bind(this);
     this.getTrips = this.getTrips.bind(this);
@@ -26,6 +26,10 @@ class HomePage extends React.Component {
     this.getTrips();
   }
 
+  componentDidUpdate() {
+    this.getTrips();
+  }
+
   getUsers() {
     fetch('/api/mapHome', { method: 'GET' })
       .then(res => res.json())
@@ -33,7 +37,7 @@ class HomePage extends React.Component {
   }
 
   getTrips() {
-    fetch('/api/mapTrips', { method: 'GET' })
+    fetch('/api/mapTrips2', { method: 'GET' })
       .then(res => res.json())
       .then(data => this.setState({ userTrips: data }));
   }
