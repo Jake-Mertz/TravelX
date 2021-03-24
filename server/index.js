@@ -38,6 +38,62 @@ app.post('/api/createUser', (req, res, next) => {
     .catch(err => next(err));
 });
 
+// const userSuggestionsSQL = `
+//   insert into "userSuggestions" ("userId", "name")
+//   values ("ut"."userId", "ut"."name")
+//   from "userTable" as "ut"
+//   returning "userId", "name"
+// `;
+
+// app.post('/api/createSuggestions', (req, res, next) => {
+
+//   const userSuggestionsSQL = `
+//     select
+//     "userId",
+//     "name"
+//     from "userTable2"
+//   `;
+//   db.query(userSuggestionsSQL)
+//     .then(result => {
+//       const suggestions = result.rows;
+//       const fillSQL = `
+//         insert into "userSuggestions"
+//         values ($1, $2)
+//         returning "userId"
+//   `;
+//       const fillParams = [suggestions.userId, suggestions.name];
+//       return db.query(fillSQL, fillParams);
+//     })
+//     .then(result => {
+//       const suggestedUsers = result.rows;
+//       res.status(200).json(suggestedUsers);
+//     })
+//     .catch(err => next(err));
+// });
+
+app.get('/api/mapSuggestions', (req, res, next) => {
+  const userListSQL = `
+    select
+    "ui"."userId",
+    "ui"."shopping",
+    "ui"."nightlife",
+    "ui"."artsandculture",
+    "ui"."food",
+    "ui"."sightseeing",
+    "ui"."leisure",
+    "ut"."name",
+    "ut"."userId"
+    from "userinfo3" as "ui"
+    join "userSuggestions" as "ut" using ("userId")
+  `;
+  db.query(userListSQL)
+    .then(result => {
+      const users = result.rows;
+      res.status(200).json(users);
+    })
+    .catch(err => next(err));
+});
+
 app.post('/api/createTrip2', (req, res, next) => {
   const tripInfoSQL = `
     insert into "userTrips4" ("destination", "arrival", "departure")
