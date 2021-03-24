@@ -14,11 +14,15 @@ class HomePage extends React.Component {
       destination: [],
       arrival: [],
       departure: []
+      // dummy: 0,
+      // reload: false
     };
     this.getUsers = this.getUsers.bind(this);
     this.getTrips = this.getTrips.bind(this);
     this.handleCreateTrip = this.handleCreateTrip.bind(this);
     this.createTrip = this.createTrip.bind(this);
+    // this.refreshPage = this.refreshPage.bind(this);
+    this.createTrip2 = this.createTrip2.bind(this);
   }
 
   componentDidMount() {
@@ -47,6 +51,28 @@ class HomePage extends React.Component {
     // console.log(res);
   }
 
+  // refreshPage() {
+  //   this.setState(
+  //     { reload: true },
+  //     () => this.setState({ reload: false })
+  //   );
+  // }
+
+  createTrip2() {
+    this.createTrip();
+    this.getTrips();
+    // this.render();
+    // this.setState({ state: this.state });
+    // this.setState({});
+    // .then(this.forceUpdate())
+    // this.setState({ dummy: this.state.dummy + 1 });
+    // .then(window.location.reload())
+    // .then(useEffect(() => {
+    //   fetchData();
+    // }, [data]))
+    // this.refreshPage();
+  }
+
   createTrip(destination, arrival, departure) {
     event.preventDefault();
     const tripInfo = {
@@ -58,11 +84,20 @@ class HomePage extends React.Component {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(tripInfo)
+      // cache: 'reload'
     })
       .then(res => res.json())
       // .then(this.getTrips())
       // .then(this.render())
       // .then(this.setState({ state: this.state }))
+      // .then(this.setState({}))
+      // .then(this.forceUpdate())
+      // .then(this.setState({ dummy: this.state.dummy + 1 }))
+      // .then(window.location.reload())
+      // .then(useEffect(() => {
+      //   fetchData();
+      // }, [data]))
+      // .then(this.refreshPage())
       .catch(err => console.error(err));
   }
 
@@ -87,6 +122,7 @@ class HomePage extends React.Component {
       return (
         <div key={user.userId}>
           <UserCard2
+            id={user.userId}
             name={user.name}
             artsandculture={user.artsandculture}
             food={user.food}
@@ -173,7 +209,7 @@ class HomePage extends React.Component {
                   type="submit"
                   value="Add trip"
                   name="Submit"
-                  onClick={() => this.createTrip()}
+                  onClick={() => this.createTrip2()}
                 />
                 {/* <button onClick={() => this.createTrip()}>Add trip</button> */}
               </div>

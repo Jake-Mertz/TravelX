@@ -38,7 +38,17 @@ class UserCard2 extends React.Component {
     };
 
     // const recommendNo = () => {
-    //   console.log('hi!');
+    //   event.preventDefault();
+    //   const user = {
+    //     user: event.target
+    //   };
+    //   fetch('/api/deleteSuggestion', {
+    //     method: 'DELETE',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(user)
+    //   })
+    //     .then(res => res.json())
+    //     .catch(err => { console.error(err); });
     // };
     // const recommendYes = () => {
     //   const userMatchId = event.target;
@@ -56,8 +66,8 @@ class UserCard2 extends React.Component {
           </div>
         </div>
         <div className="user-card-buttons-container">
-          {/* <button className="user-card-no" onClick={recommendNo()}><i className="fas fa-times"></i></button>
-          <button className="user-card-yes" onClick={recommendYes()}><i className="fas fa-check"></i></button> */}
+          {/* <button className="user-card-no" onClick={ event => recommendNo()}><i className="fas fa-times"></i></button> */}
+          {/* <button className="user-card-yes" onClick={recommendYes()}><i className="fas fa-check"></i></button> */}
         </div>
       </div>
     );
