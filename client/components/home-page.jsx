@@ -23,6 +23,7 @@ class HomePage extends React.Component {
     this.createTrip = this.createTrip.bind(this);
     // this.refreshPage = this.refreshPage.bind(this);
     this.createTrip2 = this.createTrip2.bind(this);
+    this.handleDeleteClick = this.handleDeleteClick.bind(this);
   }
 
   componentDidMount() {
@@ -101,6 +102,21 @@ class HomePage extends React.Component {
       .catch(err => console.error(err));
   }
 
+  handleDeleteClick(event) {
+    // const users = this.state.userList.map(item => ({ ...item }));
+    const thisGuy = event.target.parentNode.parentNode.id;
+    // .getAttribute('id');
+    const data = { userJawn: thisGuy };
+    fetch('/api/deleteSuggestion', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .catch(err => console.error(err));
+    // console.log(thisGuy);
+  }
+
   render() {
     // const userListRender = this.state.userList.map(user => {
     //   return (
@@ -131,6 +147,7 @@ class HomePage extends React.Component {
             shopping={user.shopping}
             sightseeing={user.sightseeing}
             hiking={user.hiking}
+            delete={this.handleDeleteClick}
           />
         </div>
       );

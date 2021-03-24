@@ -5,7 +5,7 @@ class UserCard2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: [],
+      userId: props.id,
       name: props.name,
       artsandculture: props.artsandculture,
       food: props.food,
@@ -40,7 +40,7 @@ class UserCard2 extends React.Component {
     // const recommendNo = () => {
     //   event.preventDefault();
     //   const user = {
-    //     user: event.target
+    //     userJawn: event.target.parentNode
     //   };
     //   fetch('/api/deleteSuggestion', {
     //     method: 'DELETE',
@@ -55,7 +55,7 @@ class UserCard2 extends React.Component {
     //   console.log(userMatchId);
     // };
     return (
-      <div className="user-card">
+      <div className="user-card" id={this.state.userId}>
         <div className="user-photo-and-info-container">
           <div>
             <button className="home-photo"></button>
@@ -66,7 +66,13 @@ class UserCard2 extends React.Component {
           </div>
         </div>
         <div className="user-card-buttons-container">
-          {/* <button className="user-card-no" onClick={ event => recommendNo()}><i className="fas fa-times"></i></button> */}
+          <button
+            className="user-card-no"
+            onClick={this.props.delete}>
+            <i
+              className="fas fa-times"
+            >
+            </i></button>
           {/* <button className="user-card-yes" onClick={recommendYes()}><i className="fas fa-check"></i></button> */}
         </div>
       </div>
