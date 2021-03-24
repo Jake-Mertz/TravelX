@@ -66,6 +66,20 @@ app.post('/api/createTrip2', (req, res, next) => {
 //     .catch(err => next(err));
 // });
 
+app.delete('/api/deleteSuggestion', (req, res, next) => {
+  const deleteSQL = `
+    delete from "userTable2"
+      where "userId" = 1$
+      returning *
+  `;
+  const deleteParams = [req.body.userId];
+  db.query(deleteSQL, deleteParams)
+    .then(result => {
+      res.status(200);
+    })
+    .catch(err => next(err));
+});
+
 // Map users to home page
 app.get('/api/mapHome', (req, res, next) => {
   const userListSQL = `
