@@ -69,10 +69,10 @@ app.post('/api/createTrip2', (req, res, next) => {
 app.delete('/api/deleteSuggestion', (req, res, next) => {
   const deleteSQL = `
     delete from "userTable2"
-      where "userId" = 1$
+      where "userId" = $1
       returning *
   `;
-  const deleteParams = [req.body.userId];
+  const deleteParams = [req.body.userJawn];
   db.query(deleteSQL, deleteParams)
     .then(result => {
       res.status(200);
