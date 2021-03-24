@@ -10,6 +10,7 @@ class HomePage extends React.Component {
     this.state = {
       user: null,
       userList: [],
+      userSuggestions: [],
       userTrips: [],
       destination: [],
       arrival: [],
@@ -24,16 +25,30 @@ class HomePage extends React.Component {
     // this.refreshPage = this.refreshPage.bind(this);
     this.createTrip2 = this.createTrip2.bind(this);
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
+    this.fillSuggestions = this.fillSuggestions.bind(this);
   }
 
   componentDidMount() {
     this.getUsers();
     this.getTrips();
+    // this.fillSuggestions();
   }
 
   // componentDidUpdate() {
   //   this.getTrips();
   // }
+
+  fillSuggestions() {
+    fetch('/api/createSuggestions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then(res => res.json());
+
+    fetch('/api/mapSuggestions', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => this.setState({ userSuggestions: data }));
+  }
 
   getTrips() {
     fetch('/api/mapTrips2', { method: 'GET' })
@@ -134,7 +149,7 @@ class HomePage extends React.Component {
     //     </div>
     //   );
     // });
-    const userListRender2 = this.state.userList.map(user => {
+    const userListRender2 = this.state.userSuggestions.map(user => {
       return (
         <div key={user.userId}>
           <UserCard2
@@ -232,6 +247,8 @@ class HomePage extends React.Component {
               </div>
             </form>
           </div>
+
+          {/* <button onClick={this.fillSuggestions()}>FILL SUGGESTIONS</button> */}
 
           <div className="home-page-option-container">
             <button className="home-page-option-button"><i className="far fa-user-circle"></i></button>
