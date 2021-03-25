@@ -271,30 +271,35 @@ class HomePage extends React.Component {
           </div>
         </div>
 
-        <div className="matches-container-container">
-          <h1 className="matches-list-title">Your Matches:</h1>
-          <div className="matches-container">
-            <div className="matches-list">{userMatchesRender}</div>
+        <div className="matches-container-container-container">
+          <div className="matches-container-container">
+            <h1 className="matches-list-title">Your Matches:</h1>
+            <h2 className="matches-subhead">Start a conversation</h2>
+            <div className="matches-container">
+              <div className="matches-list">{userMatchesRender}</div>
+            </div>
           </div>
         </div>
 
-        <div className="connections-container">
-          <div className="filters-container">
-            <h1 className="filters-title">Filters:</h1>
-            <form className="filters-form">
-              <label>Age Range</label>
-              <label>Destination</label>
-              <label>Interests</label>
-              <label>Split Costs</label>
-            </form>
-          </div>
-          <div className="user-list-container">
+        <div className="connections-container-container">
+          <div className="connections-container">
             <h1 className="user-list-title">Recommended just for you:</h1>
-            <div className="user-list">{userListRender2}</div>
+            <div className="filters-container">
+              <h1 className="filters-title">Filters:</h1>
+              <form className="filters-form">
+                <label className="filter-labels">Destination</label>
+                <label className="filter-labels">Interests</label>
+                <label className="filter-labels">Split Costs</label>
+              </form>
+            </div>
+            <div className="user-list-container">
+              <div className="user-list">{userListRender2}</div>
+            </div>
           </div>
+          <div className="footer"></div>
         </div>
-        <div className="footer"></div>
       </div>
+
     );
   }
 }
