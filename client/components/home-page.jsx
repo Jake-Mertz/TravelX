@@ -28,6 +28,7 @@ class HomePage extends React.Component {
     this.createTrip2 = this.createTrip2.bind(this);
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
     this.fillSuggestions = this.fillSuggestions.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   componentDidMount() {
@@ -75,6 +76,10 @@ class HomePage extends React.Component {
   //     () => this.setState({ reload: false })
   //   );
   // }
+
+  logout() {
+    this.props.setView('landing-page', {});
+  }
 
   createTrip2() {
     this.createTrip();
@@ -151,6 +156,7 @@ class HomePage extends React.Component {
     //     </div>
     //   );
     // });
+
     const userListRender2 = this.state.userList.map(user => {
       return (
         <div key={user.userId}>
@@ -256,14 +262,14 @@ class HomePage extends React.Component {
 
           {/* <button onClick={this.fillSuggestions()}>FILL SUGGESTIONS</button> */}
 
-          {/* <div className="home-page-option-container">
-            <button className="home-page-option-button"><i className="far fa-user-circle"></i></button>
-            <button className="home-page-option-button">Messages</button>
+          {/* <div className="home-page-option-container"> */}
+          {/* <button className="home-page-option-button"><i className="far fa-user-circle"></i></button> */}
+          {/* <button className="home-page-option-button">Messages</button>
             <button className="home-page-option-button">Profile</button>
             <div className="home-page-option-spacer"></div>
-            <button className="home-page-option-button">Help</button>
-            <button className="home-page-option-button">Log Out</button>
-          </div> */}
+            <button className="home-page-option-button">Help</button> */}
+          <button className="home-page-option-button" onClick={() => this.logout()}>Log Out</button>
+          {/* </div> */}
         </div>
 
         <div className="my-trips-container-container">
