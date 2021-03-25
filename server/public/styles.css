@@ -259,6 +259,9 @@
   color: white;
 }
 
+/* /////////////////////////////////////////////////// */
+/* Home Page User Options */
+
 .home-page-option-container {
   display: flex;
   flex-direction: column;
@@ -301,7 +304,7 @@
 .my-trips-container {
   width: 80%;
   /* height: 8rem; */
-  margin-top: 8%;
+  margin-top: 4%;
   /* background-color: white; */
   /* display: flex;
   flex-direction: column; */
@@ -319,7 +322,7 @@
   /* margin-right: 63%; */
   font-size: 32px;
   font-style: bold;
-  margin: 1.5% 0 0 0.2%;
+  margin: 0 0 0.3% 0.2%;
 }
 
 .trip-card-container {
@@ -459,49 +462,73 @@
 /* ////////////////////////////////////////////////////////////////////////// */
 /* Home User Matches */
 
-/* .matches-container {
-
+/* .matches-container-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 } */
+
+.matches-container {
+  display: flex;
+  justify-content: center;
+}
 
 .matches-list-title {
   font-size: 18px;
-  margin-left: 5%;
+  margin-left: 10%;
+  padding-top: 5%;
+  width: 20%;
 }
 
 .matches-list {
-  width: 50%;
+  width: 80%;
+  display: flex;
+}
+
+.mapped-match-container {
+  width: 18rem;
+  margin-right: 3rem;
+  height: 12rem;
 }
 
 .user-match-card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
   margin-bottom: 2%;
+  padding-bottom: 2%;
   border-radius: 20px;
   background-color: white;
+  height: 100%;
 }
 
 .user-match-photo-and-info-container {
   display: flex;
-  margin: 3% 3% 2% 3%;
+  height: 8rem;
+  margin: 3% 3% 0% 3%;
 }
 
 .user-match-info-container {
-  padding: 1% 0% 0% 3%;
+  padding: 1% 0% 0% 4%;
+  width: 13rem;
 }
 
 .user-match-message-button-container {
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: #1c556a;
-  border-radius: 0px 0px 20px 20px;
-  padding: 1.5% 0 3% 0;
+  /* background-color: #00a2e8;
+  border-radius: 20px;
+  padding: 1.5% 0 3% 0; */
 }
 
 .user-match-message-button {
   border-style: none;
-  width: 50%;
+  border-radius: 60px;
+  width: 10rem;
+  padding: .5rem 0;
   font-size: 12px;
-  background-color: #1c556a;
+  background-color: #00a2e8;
   color: white;
 }

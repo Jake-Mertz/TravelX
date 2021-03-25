@@ -169,7 +169,7 @@ class HomePage extends React.Component {
     });
     const userMatchesRender = this.state.userList.map(user => {
       return (
-        <div key={user.userId}>
+        <div key={user.userId} className="mapped-match-container">
           <UserMatchCard
             name={user.name}
             artsandculture={user.artsandculture}
@@ -271,6 +271,13 @@ class HomePage extends React.Component {
           </div>
         </div>
 
+        <div className="matches-container-container">
+          <h1 className="matches-list-title">Your Matches:</h1>
+          <div className="matches-container">
+            <div className="matches-list">{userMatchesRender}</div>
+          </div>
+        </div>
+
         <div className="connections-container">
           <div className="filters-container">
             <h1 className="filters-title">Filters:</h1>
@@ -284,10 +291,6 @@ class HomePage extends React.Component {
           <div className="user-list-container">
             <h1 className="user-list-title">Recommended just for you:</h1>
             <div className="user-list">{userListRender2}</div>
-          </div>
-          <div className="matches-container">
-            <h1 className="matches-list-title">Your Matches:</h1>
-            <div className="matches-list">{userMatchesRender}</div>
           </div>
         </div>
         <div className="footer"></div>
