@@ -73,7 +73,12 @@ class UserCard2 extends React.Component {
               className="fas fa-times"
             >
             </i></button>
-          {/* <button className="user-card-yes" onClick={recommendYes()}><i className="fas fa-check"></i></button> */}
+          <button
+            className="user-card-yes"
+            // onClick={recommendYes()}
+          >
+            <i className="fas fa-check"></i>
+          </button>
         </div>
       </div>
     );
