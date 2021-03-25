@@ -3,6 +3,8 @@ import React from 'react';
 import UserMatchCard from './user-match-card';
 import TripCard from './trip-card';
 import UserCard2 from './user-card2';
+// import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+// import 'pure-react-carousel/dist/react-carousel.es.css';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -267,7 +269,16 @@ class HomePage extends React.Component {
         <div className="my-trips-container-container">
           <div className="my-trips-container">
             <div className="my-trips-title">Trips Planned:</div>
+            {/* <CarouselProvider
+              naturalSlideHeight={7}
+              naturalSlideWidth={100}
+              totalSlides={4}
+            >
+              <Slider>
+                <Slide index={0}><div className="my-trips-carousel">{userTripsRender}</div></Slide>
+              </Slider> */}
             <div className="my-trips-carousel">{userTripsRender}</div>
+            {/* </CarouselProvider> */}
           </div>
         </div>
 
