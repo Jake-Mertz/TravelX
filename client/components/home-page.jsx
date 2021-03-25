@@ -45,7 +45,7 @@ class HomePage extends React.Component {
     })
       .then(res => res.json());
 
-    fetch('/api/mapSuggestions', { method: 'GET' })
+    fetch('/api/mapHome', { method: 'GET' })
       .then(res => res.json())
       .then(data => this.setState({ userSuggestions: data }));
   }
@@ -149,7 +149,7 @@ class HomePage extends React.Component {
     //     </div>
     //   );
     // });
-    const userListRender2 = this.state.userSuggestions.map(user => {
+    const userListRender2 = this.state.userList.map(user => {
       return (
         <div key={user.userId}>
           <UserCard2
@@ -194,6 +194,7 @@ class HomePage extends React.Component {
         </div>
       );
     });
+
     return (
       <div className="page-container">
 
@@ -237,27 +238,30 @@ class HomePage extends React.Component {
                   value={this.state.departure}
                   onChange={this.handleCreateTrip}
                 ></input>
+                {/* <button onClick={() => this.createTrip()}>Add trip</button> */}
+              </div>
+              <div className="add-trip-input-container">
                 <input
                   type="submit"
                   value="Add trip"
                   name="Submit"
+                  className="add-trip-button"
                   onClick={() => this.createTrip2()}
                 />
-                {/* <button onClick={() => this.createTrip()}>Add trip</button> */}
               </div>
             </form>
           </div>
 
           {/* <button onClick={this.fillSuggestions()}>FILL SUGGESTIONS</button> */}
 
-          <div className="home-page-option-container">
+          {/* <div className="home-page-option-container">
             <button className="home-page-option-button"><i className="far fa-user-circle"></i></button>
             <button className="home-page-option-button">Messages</button>
             <button className="home-page-option-button">Profile</button>
             <div className="home-page-option-spacer"></div>
             <button className="home-page-option-button">Help</button>
             <button className="home-page-option-button">Log Out</button>
-          </div>
+          </div> */}
         </div>
 
         <div className="my-trips-container-container">
