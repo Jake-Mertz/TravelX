@@ -3,7 +3,7 @@ import React from 'react';
 import UserMatchCard from './user-match-card';
 import TripCard from './trip-card';
 import UserCard2 from './user-card2';
-// import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+// import { CarouselProvider, Slider, ButtonBack, ButtonNext } from 'pure-react-carousel';
 // import 'pure-react-carousel/dist/react-carousel.es.css';
 
 class HomePage extends React.Component {
@@ -199,6 +199,12 @@ class HomePage extends React.Component {
     });
     const userTripsRender = this.state.userTrips.map(user => {
       // const tripIndexJawn = this.tripIndex;
+      // const keyObject = {};
+      // userTripsRender.set(keyObject, 'value');
+      // userTripsRender.get(keyObject);
+      // for (const [key, value] of userTripsRender) {
+      //   console.log(key + ' goes ' + value);
+      // }
       return (
         // <Slider>
         <div key={user.tripId}>
@@ -207,7 +213,7 @@ class HomePage extends React.Component {
             arrival={user.arrival}
             departure={user.departure}
             tripId={user.tripId}
-            // tripIndex={this.tripIndex}
+            // tripIndex={keyObject}
             // tripIndexLength={this.state.userTrips.length}
           />
         </div>
