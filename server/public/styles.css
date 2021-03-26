@@ -306,15 +306,16 @@
 /* Home Page My Trips */
 
 .my-trips-container-container {
-  width: 100%;
+  width: 65%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .my-trips-container {
   /* width: 60rem; */
   /* height: 8rem; */
-  margin-top: 4%;
+  margin-top: 6%;
+  width: 100%;
   /* background-color: white; */
   /* display: flex;
   flex-direction: column; */
@@ -352,7 +353,7 @@
 /* Home User Matches */
 
 .matches-container-container-container {
-  width: 100%;
+  width: 65%;
   display: flex;
   justify-content: center;
   /* margin-left: 6.5%; */
@@ -361,26 +362,30 @@
   justify-content: left; */
 }
 
-/* .matches-container-container {
-  width: 60rem;
-} */
+.matches-container-container {
+  display: flex;
+  flex-direction: column;
+  /* text-align: left; */
+  width: 100%;
+}
 
 .matches-container {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  justify-content: left;
 }
 
 .matches-list-title {
   font-size: 32px;
   font-style: bold;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   padding-top: 5%;
   width: 20%;
 }
 
 .matches-subhead {
   font-size: 18px;
-  margin-left: 10.2%;
+  /* margin-left: 10.2%; */
   width: 20%;
 }
 
