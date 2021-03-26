@@ -29,6 +29,7 @@ class HomePage extends React.Component {
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
     this.fillSuggestions = this.fillSuggestions.bind(this);
     this.logout = this.logout.bind(this);
+    this.tripIndex = this.tripIndex.bind(this);
   }
 
   componentDidMount() {
@@ -139,6 +140,11 @@ class HomePage extends React.Component {
     // console.log(thisGuy);
   }
 
+  tripIndex() {
+    const index = Map.prototype.get();
+    return index;
+  }
+
   render() {
     // const userListRender = this.state.userList.map(user => {
     //   return (
@@ -192,16 +198,33 @@ class HomePage extends React.Component {
       );
     });
     const userTripsRender = this.state.userTrips.map(user => {
+      // const tripIndexJawn = this.tripIndex;
       return (
+        // <Slider>
         <div key={user.tripId}>
           <TripCard
             destination={user.destination}
             arrival={user.arrival}
             departure={user.departure}
+            tripId={user.tripId}
+            // tripIndex={this.tripIndex}
+            // tripIndexLength={this.state.userTrips.length}
           />
         </div>
+        // </Slider>
       );
     });
+
+    // <CarouselProvider
+    //   naturalSlideHeight={7}
+    //   naturalSlideWidth={100}
+    //   totalSlides={4}
+    // >
+    //   <Slider>
+    //     <div className="my-trips-carousel">{userTripsRender}</div>
+    //   </Slider>
+    //   {/* <div className="my-trips-carousel">{userTripsRender}</div> */}
+    // </CarouselProvider>
 
     return (
       <div className="page-container">
@@ -277,14 +300,16 @@ class HomePage extends React.Component {
             <div className="my-trips-title">Trips Planned:</div>
             {/* <CarouselProvider
               naturalSlideHeight={7}
-              naturalSlideWidth={100}
+              naturalSlideWidth={0}
               totalSlides={4}
             >
-              <Slider>
-                <Slide index={0}><div className="my-trips-carousel">{userTripsRender}</div></Slide>
-              </Slider> */}
+              <Slider> */}
             <div className="my-trips-carousel">{userTripsRender}</div>
-            {/* </CarouselProvider> */}
+            {/* </Slider> */}
+            {/* <div className="my-trips-carousel">{userTripsRender}</div> */}
+            {/* <ButtonBack>Back</ButtonBack>
+              <ButtonNext>Next</ButtonNext>
+            </CarouselProvider> */}
           </div>
         </div>
 
