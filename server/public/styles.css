@@ -106,6 +106,10 @@
   border-style: none none solid none;
 }
 
+.sign-in-form-input::placeholder {
+  text-align: center;
+}
+
 /* Sign up credentials page */
 
 .sign-up-creds-form {
