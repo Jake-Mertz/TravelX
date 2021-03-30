@@ -179,7 +179,7 @@ class HomePage extends React.Component {
             shopping={user.shopping}
             sightseeing={user.sightseeing}
             hiking={user.hiking}
-            delete={this.handleDeleteClick}
+            handleDeleteClick={this.handleDeleteClick}
           />
         </div>
       );
