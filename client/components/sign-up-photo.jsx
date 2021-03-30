@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Second page of user sign-up. User can add profile photo.
 function SignUpPhoto(props) {
   function signUpPhotoSubmit() {
     props.setView('sign-up-interests', {});

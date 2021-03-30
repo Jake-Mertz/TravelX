@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Currently not being used
 function ProfilePage(props) {
   function logOut() {
     props.setView('landing-page', {});

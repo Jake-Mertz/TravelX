@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Older version of component for rendering each individual
+// suggested user card to home page. Will probably delete when user cards
+// are fully finished.
 function UserCard(props) {
   function userInterestMap() {
     let userInterests = [];

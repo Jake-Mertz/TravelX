@@ -1,5 +1,7 @@
 import React from 'react';
 
+// First sign-up page where user enters name and email, and creates a password.
+// Simple setup without security, for now.
 class SignUpCredentials extends React.Component {
   constructor(props) {
     super(props);
