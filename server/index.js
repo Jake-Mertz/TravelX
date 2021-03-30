@@ -38,6 +38,61 @@ app.post('/api/createUser', (req, res, next) => {
     .catch(err => next(err));
 });
 
+// Client uploads sign-up profile photo
+app.post('api/uploads', uploadsMiddleware, (req, res, next) => {
+  const image = `/userTable/${req.file.filename}`;
+  const imageSQL = `
+    insert into "userTable" ("profilePhotoUrl")
+    values ($1)
+    returning "profilePhotoUrl"
+  `;
+  const imageParams = [image];
+  db.query(imageSQL, imageParams)
+    .then(result => {
+      const storedImage = result.rows;
+      res.status(200).json(storedImage);
+    })
+    .catch(err => next(err));
+});
+
+// Client fills out sign-up interests form
+// app.post('/api/intro-interests', (req, res, next) => {
+
+// })
+
+// User creates trip
+app.post('/api/createTrip2', (req, res, next) => {
+  const tripInfoSQL = `
+    insert into "userTrips4" ("destination", "arrival", "departure")
+    values ($1, $2, $3)
+    returning "tripId", "destination", "arrival", "departure"
+    `;
+  const tripInfoParams = [req.body.destination, req.body.arrival, req.body.departure];
+  db.query(tripInfoSQL, tripInfoParams)
+    .then(result => {
+      res.status(201).json(result.rows[0]);
+    })
+    .catch(err => next(err));
+});
+
+// Map user trips to home page
+app.get('/api/mapTrips2', (req, res, next) => {
+  const userTripSQL = `
+    select
+    "tripId",
+    "destination",
+    "arrival",
+    "departure"
+    from "userTrips4"
+  `;
+  db.query(userTripSQL)
+    .then(result => {
+      const trips = result.rows;
+      res.status(200).json(trips);
+    })
+    .catch(err => next(err));
+});
+
 // Extra code from createSuggestions endpoint directly below
 // const userSuggestionsSQL = `
 //   insert into "userSuggestions" ("userId", "name")
@@ -49,7 +104,7 @@ app.post('/api/createUser', (req, res, next) => {
 // Map suggested users to home page. This endpoint is my effort
 // to select certain users from primary user database table, and
 // POST them to a secondary table. When functional, this will
-// replace mapSuggestions endpoint (below).
+// replace mapSuggestions and mapHome endpoints (below).
 // app.post('/api/createSuggestions', (req, res, next) => {
 //   const userSuggestionsSQL = `
 //     select
@@ -76,7 +131,7 @@ app.post('/api/createUser', (req, res, next) => {
 // });
 
 // Map suggested users to home page. A placeholder, currently maps
-// actual users to home page from primary user database table
+// users from dummy data "userSuggestions" table.
 app.get('/api/mapSuggestions', (req, res, next) => {
   const userListSQL = `
     select
@@ -100,37 +155,8 @@ app.get('/api/mapSuggestions', (req, res, next) => {
     .catch(err => next(err));
 });
 
-// User creates trip
-app.post('/api/createTrip2', (req, res, next) => {
-  const tripInfoSQL = `
-    insert into "userTrips4" ("destination", "arrival", "departure")
-    values ($1, $2, $3)
-    returning "tripId", "destination", "arrival", "departure"
-    `;
-  const tripInfoParams = [req.body.destination, req.body.arrival, req.body.departure];
-  db.query(tripInfoSQL, tripInfoParams)
-    .then(result => {
-      res.status(201).json(result.rows[0]);
-    })
-    .catch(err => next(err));
-});
-
-// User removes suggested user from suggested user list
-app.delete('/api/deleteSuggestion', (req, res, next) => {
-  const deleteSQL = `
-    delete from "userTable2"
-      where "userId" = $1
-      returning *
-  `;
-  const deleteParams = [req.body.userJawn];
-  db.query(deleteSQL, deleteParams)
-    .then(result => {
-      res.status(200);
-    })
-    .catch(err => next(err));
-});
-
-// Map suggested users to home page
+// Map suggested users to home page. A placeholder, currently maps
+// users to home page from dummy data "userTable2" table.
 app.get('/api/mapHome', (req, res, next) => {
   const userListSQL = `
     select
@@ -154,42 +180,17 @@ app.get('/api/mapHome', (req, res, next) => {
     .catch(err => next(err));
 });
 
-// Map user trips to home page
-app.get('/api/mapTrips2', (req, res, next) => {
-  const userTripSQL = `
-    select
-    "tripId",
-    "destination",
-    "arrival",
-    "departure"
-    from "userTrips4"
+// User removes suggested user from suggested user list
+app.delete('/api/deleteSuggestion', (req, res, next) => {
+  const deleteSQL = `
+    delete from "userTable2"
+      where "userId" = $1
+      returning *
   `;
-  db.query(userTripSQL)
+  const deleteParams = [req.body.userJawn];
+  db.query(deleteSQL, deleteParams)
     .then(result => {
-      const trips = result.rows;
-      res.status(200).json(trips);
-    })
-    .catch(err => next(err));
-});
-
-// Client fills out interests form
-// app.post('/api/intro-interests', (req, res, next) => {
-
-// })
-
-// Client uploads profile photo
-app.post('api/uploads', uploadsMiddleware, (req, res, next) => {
-  const image = `/userTable/${req.file.filename}`;
-  const imageSQL = `
-    insert into "userTable" ("profilePhotoUrl")
-    values ($1)
-    returning "profilePhotoUrl"
-  `;
-  const imageParams = [image];
-  db.query(imageSQL, imageParams)
-    .then(result => {
-      const storedImage = result.rows;
-      res.status(200).json(storedImage);
+      res.status(200);
     })
     .catch(err => next(err));
 });

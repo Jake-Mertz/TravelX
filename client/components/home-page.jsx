@@ -111,7 +111,7 @@ class HomePage extends React.Component {
     // this.refreshPage();
   }
 
-  // User can create a trip. Currently playing around with different back end endpoints
+  // User can create a trip. Was playing around with different back end endpoints
   // with this, hence the name "createTrip2".
   // Also, trying to find how to force component to rerender when trips table is updated.
   createTrip(destination, arrival, departure) {
@@ -228,7 +228,8 @@ class HomePage extends React.Component {
       );
     });
 
-    // Extra carousel code in userTripsRender, and directly below: could be useful later
+    // Extra carousel code in userTripsRender above, and directly below: could be useful later
+
     // <CarouselProvider
     //   naturalSlideHeight={7}
     //   naturalSlideWidth={100}
@@ -243,9 +244,9 @@ class HomePage extends React.Component {
     return (
       <div className="page-container">
 
+        {/* Home Top Row */}
         <div className="home-top-row">
           <div className="travelx-logo">TravelX</div>
-
           {/* Add trip form */}
           <div className="add-trip-bar">
             <form className="add-trip-form" method="POST">
@@ -309,6 +310,7 @@ class HomePage extends React.Component {
           <button className="home-page-option-button" onClick={() => this.logout()}>Log Out</button>
           {/* </div> */}
         </div>
+        {/* ^^^ End Home Top Row */}
 
         {/* Planned trips section: displays all currently planned trips. Carousel code under construction.  */}
         <div className="my-trips-container-container">
@@ -340,10 +342,10 @@ class HomePage extends React.Component {
           </div>
         </div>
 
-        {/* Display user recommendations section */}
-        <div className="connections-container-container">
-          <div className="connections-container">
-            <h1 className="user-list-title">Recommended just for you:</h1>
+        {/* Display suggested users section */}
+        <div className="suggested-users-container-container">
+          <div className="suggested-users-container">
+            <h1 className="suggested-user-list-title">Recommended just for you:</h1>
             <div className="filters-container">
               <h1 className="filters-title">Filters:</h1>
               <form className="filters-form">
@@ -352,8 +354,8 @@ class HomePage extends React.Component {
                 <label className="filter-labels">Split Costs</label>
               </form>
             </div>
-            <div className="user-list-container">
-              <div className="user-list">{userListRender2}</div>
+            <div className="suggested-user-list-container">
+              <div className="suggested-user-list">{userListRender2}</div>
             </div>
           </div>
           <div className="footer"></div>
