@@ -24,6 +24,8 @@ export default class App extends React.Component {
     this.handleUserSubmit = this.handleUserSubmit.bind(this);
   }
 
+  // Handle submission of user credentials upon completion
+  // of first page in sign-up process (sign-up-creds.jsx)
   handleUserSubmit(name, email, password) {
     event.preventDefault();
     const userInfo = {
@@ -44,6 +46,8 @@ export default class App extends React.Component {
       .catch(err => console.error(err));
   }
 
+  // Handle submission of user profile photo upon completion
+  // of second page in sign-up process (sign-up-photo.jsx)
   handlePhotoSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -72,6 +76,9 @@ export default class App extends React.Component {
     });
   }
 
+  // Not really sure what I was going to use this for.
+  // I think it is some initial functionality for using state
+  // for login feature.
   getUserProfile() {
     fetch('api/userTable')
       .then(res => res.json())
