@@ -40,7 +40,7 @@ class UserCard2 extends React.Component {
       return userInterests;
     };
 
-    // recommendNo (deny suggested user button method) has been replaced by
+    // recommendNo() (deny suggested user button method) has been replaced by
     // this.props.delete. Still keeping in case it becomes useful later.
     // Also, beginnings of method for accept suggested user button.
     // const recommendNo = () => {
@@ -62,28 +62,28 @@ class UserCard2 extends React.Component {
     // };
     return (
       // Rendering suggested user card with user info.
-      <div className="user-card" id={this.state.userId}>
-        <div className="user-photo-and-info-container">
+      <div className="suggested-user-card" id={this.state.userId}>
+        <div className="suggested-user-photo-and-info-container">
           <div>
             <button className="home-photo"></button>
           </div>
-          <div className="user-info-container">
-            <h1 className="user-card-name">{this.state.name}</h1>
+          <div className="suggested-user-info-container">
+            <h1 className="suggested-user-card-name">{this.state.name}</h1>
             <p>Interests: {userInterestMap()}</p>
           </div>
         </div>
         {/* Buttons on suggested user card for user to either accept or remove suggested user from home page */}
         {/* Functionality under construction. Proper database setup required to move forward.  */}
-        <div className="user-card-buttons-container">
+        <div className="suggested-user-card-buttons-container">
           <button
-            className="user-card-no"
+            className="suggested-user-card-no"
             onClick={this.props.delete}>
             <i
               className="fas fa-times"
             >
             </i></button>
           <button
-            className="user-card-yes"
+            className="suggested-user-card-yes"
             // onClick={recommendYes()}
           >
             <i className="fas fa-check"></i>
