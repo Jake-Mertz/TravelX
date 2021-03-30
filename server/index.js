@@ -20,7 +20,7 @@ app.get('/api/health-check', (req, res, next) => {
     .catch(err => next(err));
 });
 
-// new stuff goes here
+// template code above, developer-written code below //////////////////////////////////////////////////////
 
 // Client creates profile with username, email, and password
 app.post('/api/createUser', (req, res, next) => {
@@ -38,6 +38,7 @@ app.post('/api/createUser', (req, res, next) => {
     .catch(err => next(err));
 });
 
+// Extra code from createSuggestions endpoint directly below
 // const userSuggestionsSQL = `
 //   insert into "userSuggestions" ("userId", "name")
 //   values ("ut"."userId", "ut"."name")
@@ -45,8 +46,11 @@ app.post('/api/createUser', (req, res, next) => {
 //   returning "userId", "name"
 // `;
 
+// Map suggested users to home page. This endpoint is my effort
+// to select certain users from primary user database table, and
+// POST them to a secondary table. When functional, this will
+// replace mapSuggestions endpoint (below).
 // app.post('/api/createSuggestions', (req, res, next) => {
-
 //   const userSuggestionsSQL = `
 //     select
 //     "userId",
@@ -71,6 +75,8 @@ app.post('/api/createUser', (req, res, next) => {
 //     .catch(err => next(err));
 // });
 
+// Map suggested users to home page. A placeholder, currently maps
+// actual users to home page from primary user database table
 app.get('/api/mapSuggestions', (req, res, next) => {
   const userListSQL = `
     select
@@ -94,6 +100,7 @@ app.get('/api/mapSuggestions', (req, res, next) => {
     .catch(err => next(err));
 });
 
+// User creates trip
 app.post('/api/createTrip2', (req, res, next) => {
   const tripInfoSQL = `
     insert into "userTrips4" ("destination", "arrival", "departure")
@@ -108,20 +115,7 @@ app.post('/api/createTrip2', (req, res, next) => {
     .catch(err => next(err));
 });
 
-// app.post('/api/createTrip', (req, res, next) => {
-//   const tripInfoSQL = `
-//     insert into "userTrips" ("userId", "destination", "arrivalYear", "arrivalMonth", "arrivalDay", "departureYear", "departureMonth", "departureDay")
-//     values ($1, $2, $3, $4, $5, $6, $7, $8)
-//     returning "tripId", "userId", "destination", "arrivalYear", "arrivalMonth", "arrivalDay", "departureYear", "departureMonth", "departureDay"
-//   `;
-//   const tripInfoParams = [req.body.userId, req.body.destination, req.body.arrivalYear, req.body.arrivalMonth, req.body.arrivalDay, req.body.departureYear, req.body.departureMonth, req.body.departureDay];
-//   db.query(tripInfoSQL, tripInfoParams)
-//     .then(result => {
-//       res.status(201).json(result.rows[0]);
-//     })
-//     .catch(err => next(err));
-// });
-
+// User removes suggested user from suggested user list
 app.delete('/api/deleteSuggestion', (req, res, next) => {
   const deleteSQL = `
     delete from "userTable2"
@@ -136,7 +130,7 @@ app.delete('/api/deleteSuggestion', (req, res, next) => {
     .catch(err => next(err));
 });
 
-// Map users to home page
+// Map suggested users to home page
 app.get('/api/mapHome', (req, res, next) => {
   const userListSQL = `
     select
@@ -160,27 +154,7 @@ app.get('/api/mapHome', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.get('/api/mapTrips', (req, res, next) => {
-  const userTripSQL = `
-    select
-    "tripId",
-    "destination",
-    "arrivalYear",
-    "arrivalMonth",
-    "arrivalDay",
-    "departureYear",
-    "departureMonth",
-    "departureDay"
-    from "userTrips"
-  `;
-  db.query(userTripSQL)
-    .then(result => {
-      const trips = result.rows;
-      res.status(200).json(trips);
-    })
-    .catch(err => next(err));
-});
-
+// Map user trips to home page
 app.get('/api/mapTrips2', (req, res, next) => {
   const userTripSQL = `
     select
@@ -197,25 +171,6 @@ app.get('/api/mapTrips2', (req, res, next) => {
     })
     .catch(err => next(err));
 });
-
-// app.get('api/createUser', (req, res, next) => {
-//   const sql = `
-//     select *
-//     from "userTable"
-//     where "userId" = $1
-//   `;
-//   const params = [req.params.userId];
-//   db.query(sql, params)
-//     .then(result => {
-//       res.json(result.rows);
-//     })
-//     .catch(err => next(err));
-// });
-
-// app.get('api/createUser', (req, res, next) => {
-//   res.render('form');
-//   res.sendFile('index.html');
-// });
 
 // Client fills out interests form
 // app.post('/api/intro-interests', (req, res, next) => {
@@ -239,19 +194,7 @@ app.post('api/uploads', uploadsMiddleware, (req, res, next) => {
     .catch(err => next(err));
 });
 
-// app.get('/api/userTable', (req, res, next) => {
-//   const sql = `
-//     select "profilePhotoUrl"
-//       from "userTable"
-//   `;
-//   db.query(sql)
-//     .then(result => {
-//       res.json(result.rows);
-//     })
-//     .catch(err => next(err));
-// });
-
-// ///////////////////////////////////////////////////////////////////////////////////////////
+// developer code above, template code below ///////////////////////////////////////////
 
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
