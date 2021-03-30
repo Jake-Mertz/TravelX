@@ -20,7 +20,7 @@ app.get('/api/health-check', (req, res, next) => {
     .catch(err => next(err));
 });
 
-// template code above, developer-written code below //////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////////////////////
 
 // Client creates profile with username, email, and password
 app.post('/api/createUser', (req, res, next) => {
@@ -195,7 +195,7 @@ app.delete('/api/deleteSuggestion', (req, res, next) => {
     .catch(err => next(err));
 });
 
-// developer code above, template code below ///////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////
 
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
