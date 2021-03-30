@@ -41,7 +41,7 @@ class UserCard2 extends React.Component {
     };
 
     // recommendNo() (deny suggested user button method) has been replaced by
-    // this.props.delete. Still keeping in case it becomes useful later.
+    // this.props.handleDeleteClick. Still keeping in case it becomes useful later.
     // Also, beginnings of method for accept suggested user button.
     // const recommendNo = () => {
     //   event.preventDefault();
@@ -77,7 +77,7 @@ class UserCard2 extends React.Component {
         <div className="suggested-user-card-buttons-container">
           <button
             className="suggested-user-card-no"
-            onClick={this.props.delete}>
+            onClick={this.props.handleDeleteClick}>
             <i
               className="fas fa-times"
             >
