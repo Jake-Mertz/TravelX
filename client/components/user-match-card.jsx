@@ -1,5 +1,7 @@
 import React from 'react';
 
+// Essentially the same as user-card2, except for user matches.
+// Instead of accept or deny buttons on card, user can choose to send a message.
 function UserMatchCard(props) {
   function userInterestMap() {
     let userInterests = [];

@@ -1,6 +1,7 @@
 import React from 'react';
 // import { Slide } from 'pure-react-carousel';
 
+// Component for rendering each individual trip card to home page
 function TripCard(props) {
   return (
     // <Slide index={props.tripIndex}>

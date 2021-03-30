@@ -46,8 +46,8 @@ class HomePage extends React.Component {
 
   // Part of functionality for actually rendering suggested
   // users instead of just rendering users from primary user table [under construction]
-  // Idea is to POST entries from primary user table into a secondary table upon page load,
-  // which is then mapped to home page to be manipulated by the user.
+  // Idea is to POST certain entries from primary user table into a secondary table upon page load,
+  // then map secondary table to home page to be manipulated by the user.
   fillSuggestions() {
     fetch('/api/createSuggestions', {
       method: 'POST',
@@ -184,8 +184,8 @@ class HomePage extends React.Component {
         </div>
       );
     });
-    // Map method for rendering user matches to home page. For now, this is virtually
-    // the same as userListRender2 and pulling from the same data table.
+    // Map method for rendering user matches to home page. For now, this is a placeholder,
+    // virtually the same as userListRender2 and pulling from the same data table.
     const userMatchesRender = this.state.userList.map(user => {
       return (
         <div key={user.userId} className="mapped-match-container">
@@ -228,7 +228,7 @@ class HomePage extends React.Component {
       );
     });
 
-    // Extra carousel code directly above, and below: could be useful later
+    // Extra carousel code in userTripsRender, and directly below: could be useful later
     // <CarouselProvider
     //   naturalSlideHeight={7}
     //   naturalSlideWidth={100}

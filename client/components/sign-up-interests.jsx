@@ -1,5 +1,7 @@
 import React from 'react';
 
+// Third page of user sign-up. User chooses from a list of interests
+// to add to their profile.
 function SignUpInterests(props) {
   function signUpComplete() {
     props.setView('home-page', {});
