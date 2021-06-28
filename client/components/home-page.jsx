@@ -5,6 +5,10 @@ import TripCard from './trip-card';
 import UserCard2 from './user-card2';
 // import { CarouselProvider, Slider, ButtonBack, ButtonNext } from 'pure-react-carousel';
 // import 'pure-react-carousel/dist/react-carousel.es.css';
+import Heading from './home/heading';
+import Trips from './home/trips';
+import Matches from './home/matches';
+import RecommendedUsers from './home/recommended-users';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -243,125 +247,24 @@ class HomePage extends React.Component {
 
     return (
       <div className="page-container">
-
-        {/* Home Top Row */}
-        <div className="home-top-row">
-          <div className="travelx-logo">TravelX</div>
-          {/* Add trip form */}
-          <div className="add-trip-bar">
-            <form className="add-trip-form" method="POST">
-              <div className="add-trip-input-container">
-                <label className="add-trip-input-label">Destination</label>
-                <input
-                  type="text"
-                  id="destination"
-                  name="destination"
-                  placeholder="Where are you going?"
-                  className="add-trip-input"
-                  value={this.state.destination}
-                  onChange={this.handleCreateTrip}
-                ></input>
-              </div>
-              <div className="add-trip-input-container">
-                <label className="add-trip-input-label">Arrival</label>
-                <input
-                  type="date"
-                  id="arrival"
-                  name="arrival"
-                  placeholder="Add dates"
-                  className="add-trip-input"
-                  value={this.state.arrival}
-                  onChange={this.handleCreateTrip}
-                ></input>
-              </div>
-              <div className="add-trip-input-container">
-                <label className="add-trip-input-label">Departure</label>
-                <input
-                  type="date"
-                  id="departure"
-                  name="departure"
-                  placeholder="Add dates"
-                  className="add-trip-input"
-                  value={this.state.departure}
-                  onChange={this.handleCreateTrip}
-                ></input>
-                {/* <button onClick={() => this.createTrip()}>Add trip</button> */}
-              </div>
-              <div className="add-trip-input-container">
-                <input
-                  type="submit"
-                  value="Add trip"
-                  name="Submit"
-                  className="add-trip-button"
-                  onClick={() => this.createTrip2()}
-                />
-              </div>
-            </form>
-          </div>
-
-          {/* Container for: link to edit user profile, messaging, "help", and logout. */}
-          {/* <button onClick={this.fillSuggestions()}>FILL SUGGESTIONS</button> */}
-          {/* <div className="home-page-option-container"> */}
-          {/* <button className="home-page-option-button"><i className="far fa-user-circle"></i></button> */}
-          {/* <button className="home-page-option-button">Messages</button>
-            <button className="home-page-option-button">Profile</button>
-            <div className="home-page-option-spacer"></div>
-            <button className="home-page-option-button">Help</button> */}
-          <button className="home-page-option-button" onClick={() => this.logout()}>Log Out</button>
-          {/* </div> */}
-        </div>
-        {/* ^^^ End Home Top Row */}
-
-        {/* Planned trips section: displays all currently planned trips. Carousel code under construction.  */}
-        <div className="my-trips-container-container">
-          <div className="my-trips-container">
-            <div className="my-trips-title">Trips Planned:</div>
-            {/* <CarouselProvider
-              naturalSlideHeight={7}
-              naturalSlideWidth={0}
-              totalSlides={4}
-            >
-              <Slider> */}
-            <div className="my-trips-carousel">{userTripsRender}</div>
-            {/* </Slider> */}
-            {/* <div className="my-trips-carousel">{userTripsRender}</div> */}
-            {/* <ButtonBack>Back</ButtonBack>
-              <ButtonNext>Next</ButtonNext>
-            </CarouselProvider> */}
-          </div>
-        </div>
-
-        {/* Display user matches section */}
-        <div className="matches-container-container-container">
-          <div className="matches-container-container">
-            <h1 className="matches-list-title">Your Matches:</h1>
-            <h2 className="matches-subhead">Start a conversation</h2>
-            <div className="matches-container">
-              <div className="matches-list">{userMatchesRender}</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Display suggested users section */}
-        <div className="suggested-users-container-container">
-          <div className="suggested-users-container">
-            <h1 className="suggested-user-list-title">Recommended just for you:</h1>
-            <div className="filters-container">
-              <h1 className="filters-title">Filters:</h1>
-              <form className="filters-form">
-                <label className="filter-labels">Destination</label>
-                <label className="filter-labels">Interests</label>
-                <label className="filter-labels">Split Costs</label>
-              </form>
-            </div>
-            <div className="suggested-user-list-container">
-              <div className="suggested-user-list">{userListRender2}</div>
-            </div>
-          </div>
-          <div className="footer"></div>
-        </div>
+        <Heading
+          destination={this.state.destination}
+          arrival={this.state.arrival}
+          departure={this.state.departure}
+          onChange={this.handleCreateTrip}
+          createTrip={this.createTrip2}
+          logout={this.logout}
+        />
+        <Trips
+          renderTrips={userTripsRender}
+        />
+        <Matches
+          renderMatches={userMatchesRender}
+        />
+        <RecommendedUsers
+          renderUsers={userListRender2}
+        />
       </div>
-
     );
   }
 }
