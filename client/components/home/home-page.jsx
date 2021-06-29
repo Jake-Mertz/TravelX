@@ -5,10 +5,10 @@ import TripCard from './trip-card';
 import UserCard2 from './user-card2';
 // import { CarouselProvider, Slider, ButtonBack, ButtonNext } from 'pure-react-carousel';
 // import 'pure-react-carousel/dist/react-carousel.es.css';
-import Heading from './home/heading';
-import Trips from './home/trips';
-import Matches from './home/matches';
-import RecommendedUsers from './home/recommended-users';
+import Heading from './heading';
+import Trips from './trips';
+import Matches from './matches';
+import RecommendedUsers from './recommended-users';
 
 class HomePage extends React.Component {
   constructor(props) {
