@@ -177,61 +177,6 @@
 
 /* ////////////////////////////////////////////////////////////////////////////////// */
 /* Home Top Row */
-.home-top-row {
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  height: 5rem;
-  width: 100%;
-}
-
-.travelx-logo {
-  margin: 1rem 0 0 0;
-  font-size: 35px;
-}
-
-.add-trip-bar {
-  width: 45rem;
-  margin: 3rem 0 0 5%;
-}
-
-.add-trip-form {
-  background-color: white;
-  border-style: 2px rgb(221, 221, 221);
-  box-shadow: 0px 4px 3px 0px rgb(221, 221, 221);
-  height: 3.5rem;
-  border-radius: 60px;
-  width: 100%;
-  display: flex;
-  padding-left: 6%;
-}
-
-.add-trip-input-container {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  width: 25%;
-  margin-left: 3%;
-}
-
-.add-trip-input-label {
-  padding-left: 2px;
-}
-
-.add-trip-input {
-  border: none;
-  background: none;
-}
-
-.add-trip-button {
-  width: 106px;
-  padding: 9px 0;
-  margin: 3% 0 0 0;
-  background-color: #00a2e8;
-  border-radius: 60px;
-  border-style: none;
-  color: white;
-}
 
 /* ////////////////////////////////////////////////////////////////////////////////// */
 /* Home Page User Options (profile, messaging, "help", log out), exists within Home Top Row*/

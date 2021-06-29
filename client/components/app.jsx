@@ -1,10 +1,10 @@
 import React from 'react';
-import LandingPage from './landing-page';
-import SignUpPhoto from './sign-up-photo';
-import SignUpInterests from './sign-up-interests';
-import HomePage from './home-page';
-import Login from './login-page';
-import SignUpCredentials from './sign-up-creds';
+import LandingPage from './landing/landing-page';
+import SignUpPhoto from './landing/sign-up-photo';
+import SignUpInterests from './landing/sign-up-interests';
+import Login from './landing/login-page';
+import SignUpCredentials from './landing/sign-up-creds';
+import HomePage from './home/home-page';
 import ProfilePage from './profile-page';
 
 export default class App extends React.Component {

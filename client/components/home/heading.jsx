@@ -1,60 +1,115 @@
 import React from 'react';
+import styled from 'styled-components';
+
+// add container
+
+const TopRow = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  height: 5rem;
+  width: 100%;
+`;
+
+const Logo = styled.div`
+  margin: 1rem 0 0 0;
+  font-size: 35px;
+`;
+
+const AddTripBar = styled.div`
+  width: 45rem;
+  margin: 3rem 0 0 5%;
+`;
+
+const AddTripForm = styled.form`
+  background-color: white;
+  border-style: 2px rgb(221, 221, 221);
+  box-shadow: 0px 4px 3px 0px rgb(221, 221, 221);
+  height: 3.5rem;
+  border-radius: 60px;
+  width: 100%;
+  display: flex;
+  padding-left: 6%;
+`;
+
+const FormInputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  width: 25%;
+  margin-left: 3%;
+`;
+
+const FormLabel = styled.label`
+  padding-left: 2px;
+`;
+
+const FormInput = styled.input`
+  border: none;
+  background: none;
+`;
+
+const SubmitButton = styled.input`
+  width: 106px;
+  padding: 9px 0;
+  margin: 3% 0 0 0;
+  background-color: #00a2e8;
+  border-radius: 60px;
+  border-style: none;
+  color: white;
+`;
 
 function Heading(props) {
   return (
-    <div className="home-top-row">
-      <div className="travelx-logo">TravelX</div>
+    <TopRow>
+      <Logo>TravelX</Logo>
       {/* Add trip form */}
-      <div className="add-trip-bar">
-        <form className="add-trip-form" method="POST">
-          <div className="add-trip-input-container">
-            <label className="add-trip-input-label">Destination</label>
-            <input
+      <AddTripBar>
+        <AddTripForm method="POST">
+          <FormInputContainer>
+            <FormLabel>Destination</FormLabel>
+            <FormInput
               type="text"
               id="destination"
               name="destination"
               placeholder="Where are you going?"
-              className="add-trip-input"
               value={props.destination}
               onChange={props.handleCreateTrip}
-            ></input>
-          </div>
-          <div className="add-trip-input-container">
-            <label className="add-trip-input-label">Arrival</label>
-            <input
+            ></FormInput>
+          </FormInputContainer>
+          <FormInputContainer>
+            <FormLabel>Arrival</FormLabel>
+            <FormInput
               type="date"
               id="arrival"
               name="arrival"
               placeholder="Add dates"
-              className="add-trip-input"
               value={props.arrival}
               onChange={props.handleCreateTrip}
-            ></input>
-          </div>
-          <div className="add-trip-input-container">
-            <label className="add-trip-input-label">Departure</label>
-            <input
+            ></FormInput>
+          </FormInputContainer>
+          <FormInputContainer>
+            <FormLabel>Departure</FormLabel>
+            <FormInput
               type="date"
               id="departure"
               name="departure"
               placeholder="Add dates"
-              className="add-trip-input"
               value={props.departure}
               onChange={props.handleCreateTrip}
-            ></input>
+            ></FormInput>
             {/* <button onClick={() => this.createTrip()}>Add trip</button> */}
-          </div>
-          <div className="add-trip-input-container">
-            <input
+          </FormInputContainer>
+          <FormInputContainer>
+            <SubmitButton
               type="submit"
               value="Add trip"
               name="Submit"
-              className="add-trip-button"
               onClick={() => props.createTrip()}
             />
-          </div>
-        </form>
-      </div>
+          </FormInputContainer>
+        </AddTripForm>
+      </AddTripBar>
 
       {/* Container for: link to edit user profile, messaging, "help", and logout. */}
       {/* <button onClick={this.fillSuggestions()}>FILL SUGGESTIONS</button> */}
@@ -66,7 +121,7 @@ function Heading(props) {
             <button className="home-page-option-button">Help</button> */}
       <button className="home-page-option-button" onClick={() => props.logout()}>Log Out</button>
       {/* </div> */}
-    </div>
+    </TopRow>
   );
 }
 
