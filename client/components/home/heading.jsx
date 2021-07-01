@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { rem } from 'polished';
 
-// add container
+// const Container = styled.div`
+//   max-width: 1500px;
+//   margin: auto;
+//   padding: 0;
+// `;
 
 const TopRow = styled.div`
   display: flex;
@@ -13,7 +18,7 @@ const TopRow = styled.div`
 
 const Logo = styled.div`
   margin: 1rem 0 0 0;
-  font-size: 35px;
+  font-size: ${rem(35)};
 `;
 
 const AddTripBar = styled.div`
@@ -23,7 +28,7 @@ const AddTripBar = styled.div`
 
 const AddTripForm = styled.form`
   background-color: white;
-  border-style: 2px rgb(221, 221, 221);
+  /* border: 2px rgb(221, 221, 221); */
   box-shadow: 0px 4px 3px 0px rgb(221, 221, 221);
   height: 3.5rem;
   border-radius: 60px;
@@ -50,7 +55,7 @@ const FormInput = styled.input`
 `;
 
 const SubmitButton = styled.input`
-  width: 106px;
+  width: ${rem(106)};
   padding: 9px 0;
   margin: 3% 0 0 0;
   background-color: #00a2e8;
@@ -61,6 +66,7 @@ const SubmitButton = styled.input`
 
 function Heading(props) {
   return (
+    // <Container>
     <TopRow>
       <Logo>TravelX</Logo>
       {/* Add trip form */}
@@ -122,6 +128,8 @@ function Heading(props) {
       <button className="home-page-option-button" onClick={() => props.logout()}>Log Out</button>
       {/* </div> */}
     </TopRow>
+    // {/* </Container> */}
+
   );
 }
 
