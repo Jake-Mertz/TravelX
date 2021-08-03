@@ -250,40 +250,40 @@
 /* ////////////////////////////////////////////////////////////////////////////////// */
 /* Home Page User Matches */
 
-.matches-container-container-container {
+/* .matches-container-container-container {
   width: 65%;
   display: flex;
   justify-content: center;
-}
+} */
 
-.matches-container-container {
+/* .matches-container-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
+} */
 
-.matches-container {
+/* .matches-container {
   display: flex;
   width: 100%;
   justify-content: left;
-}
+} */
 
-.matches-list-title {
+/* .matches-list-title {
   font-size: 32px;
   font-style: bold;
   padding-top: 5%;
   width: 20%;
-}
+} */
 
-.matches-subhead {
+/* .matches-subhead {
   font-size: 18px;
   width: 20%;
-}
+} */
 
-.matches-list {
+/* .matches-list {
   width: 80%;
   display: flex;
-}
+} */
 
 .mapped-match-container {
   width: 18rem;
