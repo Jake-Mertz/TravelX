@@ -9,10 +9,10 @@
   align-items: center;
 }
 
-.footer {
+/* .footer {
   height: 100px;
   background-color: #1c556a;
-}
+} */
 
 /* ////////////////////////////////////////////////////////////////////////////////// */
 /* /////////////////////////////////////////////////////////////////////////////////// */
@@ -211,41 +211,41 @@
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* Home Page My Trips */
 
-.my-trips-container-container {
+/* .my-trips-container-container {
   width: 65%;
   display: flex;
   justify-content: left;
-}
+} */
 
-.my-trips-container {
+/* .my-trips-container {
   margin-top: 6%;
   width: 100%;
-}
+} */
 
-.my-trips-carousel {
+/* .my-trips-carousel {
   display: flex;
   flex-direction: row;
   width: 100%;
-}
+} */
 
-.my-trips-title {
+/* .my-trips-title {
   font-size: 32px;
   font-style: bold;
   margin: 0 0 0.3% 0.2%;
-}
+} */
 
-.trip-card-container {
+/* .trip-card-container {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0px 3px 3px 0px rgb(221, 221, 221);
   width: 200px;
   height: 10rem;
   margin: 1% 2.8rem 0 0;
-}
+} */
 
-.trip-info-container {
+/* .trip-info-container {
   padding: 15%;
-}
+} */
 
 /* ////////////////////////////////////////////////////////////////////////////////// */
 /* Home Page User Matches */

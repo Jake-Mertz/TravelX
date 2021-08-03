@@ -1,4 +1,5 @@
 import React from 'react';
+// import styled from 'styled-components';
 
 // Essentially the same as user-card2, except for user matches.
 // Instead of accept or deny buttons on card, user can choose to send a message.
