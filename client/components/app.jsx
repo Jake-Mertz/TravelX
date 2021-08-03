@@ -76,8 +76,7 @@ export default class App extends React.Component {
     });
   }
 
-  // Not really sure what I was going to use this for.
-  // I think it is some initial functionality for using state
+  // Some initial functionality for using state
   // for login feature.
   getUserProfile() {
     fetch('api/userTable')
