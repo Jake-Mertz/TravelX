@@ -335,16 +335,16 @@
 /* ////////////////////////////////////////////////////////////////////////////////// */
 /* Home Page Filters (exists within Suggested Users)*/
 
-.filters-container {
+/* .filters-container {
   width: 100%;
   display: flex;
   margin-bottom: 1%;
-}
+} */
 
-.filters-title {
+/* .filters-title {
   font-size: 18px;
   margin-right: 8rem;
-}
+} */
 
 .filters-form {
   display: flex;
@@ -356,36 +356,36 @@
 /* ///////////////////////////////////////////////////////////////////////////////// */
 /* Home Page Suggested Users */
 
-.suggested-users-container-container {
+/* .suggested-users-container-container {
   display: flex;
   justify-content: center;
   width: 100%;
-}
+} */
 
-.suggested-users-container {
+/* .suggested-users-container {
   display: flex;
   flex-direction: column;
   margin-top: 4%;
-}
+} */
 
-.suggested-user-list-container {
+/* .suggested-user-list-container {
   width: 100%;
   justify-content: center;
   flex-direction: column;
   margin-right: 3%;
-}
+} */
 
-.suggested-user-list-title {
+/* .suggested-user-list-title {
   font-size: 32px;
   font-style: bold;
   margin-bottom: 1rem;
-}
+} */
 
-.suggested-user-list {
+/* .suggested-user-list {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
+} */
 
 .home-photo {
   background-color: rgb(177, 177, 177);
