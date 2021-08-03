@@ -61,7 +61,7 @@ function RecommendedUsers(props) {
           <Suggestions>{props.renderUsers}</Suggestions>
         </SuggestionsWrap>
       </Section>
-      <div className="footer"></div>
+      {/* <div className="footer"></div> */}
     </Container>
   );
 }
