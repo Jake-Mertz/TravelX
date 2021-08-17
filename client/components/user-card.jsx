@@ -1,5 +1,7 @@
 import React from 'react';
 
+// COMPONENT CURRENTLY NOT IN USE
+
 // Older version of component for rendering each individual
 // suggested user card to home page. Will probably delete when user cards
 // are fully finished.

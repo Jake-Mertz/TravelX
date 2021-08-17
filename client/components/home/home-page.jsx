@@ -212,9 +212,7 @@ class HomePage extends React.Component {
           createTrip={this.createTrip2}
           logout={this.logout}
         /> */}
-        <NewTrip
-          createTrip={this.createTrip}
-        />
+        <NewTrip />
         <Trips
           renderTrips={userTripsRender}
         />
