@@ -1,5 +1,7 @@
 import React from 'react';
 
+// COMPONENT CURRENTLY NOT IN USE
+
 // Currently not being used
 function ProfilePage(props) {
   function logOut() {

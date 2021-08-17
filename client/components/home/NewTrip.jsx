@@ -17,7 +17,7 @@ const createTrip = tripData => {
     .catch(err => console.error(err));
 };
 
-const NewTrip = props => {
+const NewTrip = () => {
   const tripDataHandler = enteredTripData => {
     const tripData = {
       ...enteredTripData
