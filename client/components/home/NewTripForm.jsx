@@ -91,6 +91,9 @@ const NewTripForm = props => {
     };
     // eslint-disable-next-line
     console.log(tripData);
+    setEnteredDestination('');
+    setEnteredArrival('');
+    setEnteredDeparture('');
   };
 
   return (
@@ -106,7 +109,7 @@ const NewTripForm = props => {
               id="destination"
               name="destination"
               placeholder="Where are you going?"
-              // value={props.destination}
+              value={enteredDestination}
               onChange={destinationChangeHandler}
             />
           </FormInputContainer>
@@ -117,7 +120,7 @@ const NewTripForm = props => {
               id="arrival"
               name="arrival"
               placeholder="Add dates"
-              // value={props.arrival}
+              value={enteredArrival}
               onChange={arrivalChangeHandler}
             ></FormInput>
           </FormInputContainer>
@@ -128,7 +131,7 @@ const NewTripForm = props => {
               id="departure"
               name="departure"
               placeholder="Add dates"
-              // value={props.departure}
+              value={enteredDeparture}
               onChange={departureChangeHandler}
             ></FormInput>
             {/* <button onClick={() => this.createTrip()}>Add trip</button> */}
