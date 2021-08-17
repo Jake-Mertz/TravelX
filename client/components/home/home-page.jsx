@@ -5,10 +5,11 @@ import TripCard from './trip-card';
 import UserCard2 from './user-card2';
 // import { CarouselProvider, Slider, ButtonBack, ButtonNext } from 'pure-react-carousel';
 // import 'pure-react-carousel/dist/react-carousel.es.css';
-import Heading from './heading';
+// import Heading from './heading';
 import Trips from './trips';
 import Matches from './matches';
 import RecommendedUsers from './recommended-users';
+import NewTrip from './NewTrip';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -43,10 +44,19 @@ class HomePage extends React.Component {
     // this.fillSuggestions();
   }
 
-  // This calls getTrips repeatedly forever, not entirely sure how it works
-  // componentDidUpdate() {
-  //   this.getTrips();
-  // }
+  // Map trips to home page
+  getTrips() {
+    fetch('/api/mapTrips2', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => this.setState({ userTrips: data }));
+  }
+
+  // Map suggested users to home page
+  getUsers() {
+    fetch('/api/mapHome', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => this.setState({ userList: data }));
+  }
 
   // Part of functionality for actually rendering suggested
   // users instead of just rendering users from primary user table [under construction]
@@ -64,33 +74,10 @@ class HomePage extends React.Component {
       .then(data => this.setState({ userSuggestions: data }));
   }
 
-  // Map trips to home page
-  getTrips() {
-    fetch('/api/mapTrips2', { method: 'GET' })
-      .then(res => res.json())
-      .then(data => this.setState({ userTrips: data }));
-  }
-
-  // Map suggested users to home page
-  getUsers() {
-    fetch('/api/mapHome', { method: 'GET' })
-      .then(res => res.json())
-      .then(data => this.setState({ userList: data }));
-  }
-
   // Updating state when trip form receives entries
-  handleCreateTrip(res) {
-    this.setState({ [event.target.name]: event.target.value });
-    // console.log(res);
-  }
-
-  // Part of trying to find how to get the component to rerender when
-  // trips table is updated
-  // refreshPage() {
-  //   this.setState(
-  //     { reload: true },
-  //     () => this.setState({ reload: false })
-  //   );
+  // handleCreateTrip(res) {
+  //   this.setState({ [event.target.name]: event.target.value });
+  //   console.log(res);
   // }
 
   // Very basic user log out function
@@ -98,26 +85,8 @@ class HomePage extends React.Component {
     this.props.setView('landing-page', {});
   }
 
-  // Part of my idea regarding getting the component to rerender when
-  // trips table is updated: call getTrips along with createTrip
-  createTrip2() {
-    this.createTrip();
-    this.getTrips();
-    // this.render();
-    // this.setState({ state: this.state });
-    // this.setState({});
-    // .then(this.forceUpdate())
-    // this.setState({ dummy: this.state.dummy + 1 });
-    // .then(window.location.reload())
-    // .then(useEffect(() => {
-    //   fetchData();
-    // }, [data]))
-    // this.refreshPage();
-  }
-
-  // User can create a trip. Was playing around with different back end endpoints
-  // with this, hence the name "createTrip2".
-  // Also, trying to find how to force component to rerender when trips table is updated.
+  // User can create a trip. Playing around with different express endpoints
+  // with this, hence the api "createTrip2".
   createTrip(destination, arrival, departure) {
     event.preventDefault();
     const tripInfo = {
@@ -129,20 +98,8 @@ class HomePage extends React.Component {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(tripInfo)
-      // cache: 'reload'
     })
       .then(res => res.json())
-      // .then(this.getTrips())
-      // .then(this.render())
-      // .then(this.setState({ state: this.state }))
-      // .then(this.setState({}))
-      // .then(this.forceUpdate())
-      // .then(this.setState({ dummy: this.state.dummy + 1 }))
-      // .then(window.location.reload())
-      // .then(useEffect(() => {
-      //   fetchData();
-      // }, [data]))
-      // .then(this.refreshPage())
       .catch(err => console.error(err));
   }
 
@@ -163,10 +120,10 @@ class HomePage extends React.Component {
   }
 
   // Trying to figure out carousel index problem
-  tripIndex() {
-    const index = Map.prototype.get();
-    return index;
-  }
+  // tripIndex() {
+  //   const index = Map.prototype.get();
+  //   return index;
+  // }
 
   render() {
     // Map method for rendering suggested users to home page
@@ -247,14 +204,15 @@ class HomePage extends React.Component {
 
     return (
       <div className="page-container">
-        <Heading
+        {/* <Heading
           destination={this.state.destination}
           arrival={this.state.arrival}
           departure={this.state.departure}
           onChange={this.handleCreateTrip}
           createTrip={this.createTrip2}
           logout={this.logout}
-        />
+        /> */}
+        <NewTrip />
         <Trips
           renderTrips={userTripsRender}
         />

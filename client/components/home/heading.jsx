@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
+// COMPONENT CURRENTLY NOT IN USE
+
 // const Container = styled.div`
 //   max-width: 1500px;
 //   margin: auto;

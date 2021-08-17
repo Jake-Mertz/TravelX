@@ -15,7 +15,7 @@ const Card = styled.div`
   padding: 15%;
 `;
 
-// Component for rendering each individual trip card to home page
+// Render each individual trip card to home page
 function TripCard(props) {
   return (
     // <Slide index={props.tripIndex}>
