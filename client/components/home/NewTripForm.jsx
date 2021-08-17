@@ -90,7 +90,9 @@ const NewTripForm = props => {
       departure: new Date(enteredDeparture)
     };
     // eslint-disable-next-line
-    console.log(tripData);
+    // console.log(tripData);
+
+    props.onSaveTripData(tripData);
     setEnteredDestination('');
     setEnteredArrival('');
     setEnteredDeparture('');

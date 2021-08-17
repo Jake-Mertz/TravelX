@@ -27,14 +27,14 @@ class HomePage extends React.Component {
     };
     this.getUsers = this.getUsers.bind(this);
     this.getTrips = this.getTrips.bind(this);
-    this.handleCreateTrip = this.handleCreateTrip.bind(this);
-    this.createTrip = this.createTrip.bind(this);
+    // this.handleCreateTrip = this.handleCreateTrip.bind(this);
+    // this.createTrip = this.createTrip.bind(this);
     // this.refreshPage = this.refreshPage.bind(this);
-    this.createTrip2 = this.createTrip2.bind(this);
+    // this.createTrip2 = this.createTrip2.bind(this);
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
     this.fillSuggestions = this.fillSuggestions.bind(this);
     this.logout = this.logout.bind(this);
-    this.tripIndex = this.tripIndex.bind(this);
+    // this.tripIndex = this.tripIndex.bind(this);
   }
 
   // Map suggested users and trips to home page upon page load!
@@ -87,21 +87,21 @@ class HomePage extends React.Component {
 
   // User can create a trip. Playing around with different express endpoints
   // with this, hence the api "createTrip2".
-  createTrip(destination, arrival, departure) {
-    event.preventDefault();
-    const tripInfo = {
-      destination: this.state.destination,
-      arrival: this.state.arrival,
-      departure: this.state.departure
-    };
-    fetch('/api/createTrip2', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(tripInfo)
-    })
-      .then(res => res.json())
-      .catch(err => console.error(err));
-  }
+  // createTrip(destination, arrival, departure) {
+  //   event.preventDefault();
+  //   const tripInfo = {
+  //     destination: tripData.destination,
+  //     arrival: tripData.arrival,
+  //     departure: tripData.departure
+  //   };
+  //   fetch('/api/createTrip2', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify(tripInfo)
+  //   })
+  //     .then(res => res.json())
+  //     .catch(err => console.error(err));
+  // }
 
   // Remove suggested user from suggested users list
   handleDeleteClick(event) {
@@ -212,7 +212,9 @@ class HomePage extends React.Component {
           createTrip={this.createTrip2}
           logout={this.logout}
         /> */}
-        <NewTrip />
+        <NewTrip
+          createTrip={this.createTrip}
+        />
         <Trips
           renderTrips={userTripsRender}
         />

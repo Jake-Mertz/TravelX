@@ -61,7 +61,7 @@ app.post('api/uploads', uploadsMiddleware, (req, res, next) => {
 // })
 
 // User creates trip
-app.post('/api/createTrip2', (req, res, next) => {
+app.post('/api/createTrip', (req, res, next) => {
   const tripInfoSQL = `
     insert into "userTrips4" ("destination", "arrival", "departure")
     values ($1, $2, $3)
@@ -156,7 +156,7 @@ app.get('/api/mapSuggestions', (req, res, next) => {
 });
 
 // Map suggested users to home page. A placeholder, currently maps
-// users to home page from dummy data "userTable2" table.
+// users to home page from dummy data in userTable2.
 app.get('/api/mapHome', (req, res, next) => {
   const userListSQL = `
     select
