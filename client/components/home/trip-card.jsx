@@ -24,6 +24,7 @@ function TripCard(props) {
       <Card>
         <div className="trip-card-destination">{props.destination}</div>
         <div className="trip-card-dates">{props.arrival} - {props.departure}</div>
+        <button>Delete</button>
       </Card>
       {/* <button className="trip-card-edit-button"></button> */}
     </Container>
