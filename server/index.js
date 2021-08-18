@@ -75,13 +75,13 @@ app.post('/api/createTrip', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.delete('/api/deleteTrip', (req, res, next) => {
+app.delete('/api/deleteTrip:tripId', (req, res, next) => {
   const deleteSQL = `
     delete from "userTrips4"
       where "tripId" = $1
       returning *
   `;
-  const deleteParams = [req.body];
+  const deleteParams = [req.body.tripId];
   db.query(deleteSQL, deleteParams)
     .then(result => {
       res.status(200);

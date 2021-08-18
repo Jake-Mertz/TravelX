@@ -16,7 +16,21 @@ const Card = styled.div`
 `;
 
 // Render each individual trip card to home page
+
 function TripCard(props) {
+
+  const handleDeleteClick = (event, data) => {
+    // const trip = event.target.parentNode.parentNode.tripId;
+    // const data = { tripId: trip };
+    fetch('/api/deleteTrip:tripId', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .catch(err => console.error(err));
+  };
+
   return (
     // <Slide index={props.tripIndex}>
     <Container>
@@ -24,7 +38,7 @@ function TripCard(props) {
       <Card>
         <div className="trip-card-destination">{props.destination}</div>
         <div className="trip-card-dates">{props.arrival} - {props.departure}</div>
-        <button>Delete</button>
+        <button onClick={handleDeleteClick()}>Delete</button>
       </Card>
       {/* <button className="trip-card-edit-button"></button> */}
     </Container>
