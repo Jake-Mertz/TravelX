@@ -1,6 +1,8 @@
 import React from 'react';
 import NewTripForm from './NewTripForm';
 
+// alrighty there sweet cakes maybe you wanna use props for that function though eh?
+
 const createTrip = tripData => {
   event.preventDefault();
   const tripInfo = {
